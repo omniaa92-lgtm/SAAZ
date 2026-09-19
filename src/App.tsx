@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials'
 import Portfolio from './components/Portfolio'
 import InstagramReels from './components/InstagramReels'
 import Location from './components/Location'
+import TabbyBanner from './components/TabbyBanner'
 import Booking from './components/Booking'
 import FinalCta from './components/FinalCta'
 import Footer from './components/Footer'
@@ -43,6 +44,7 @@ export default function App() {
         <Portfolio />
         <InstagramReels />
         <Location />
+        <TabbyBanner />
         <Booking />
         <FinalCta />
       </main>
