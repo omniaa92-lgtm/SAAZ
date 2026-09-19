@@ -8,6 +8,9 @@
  *   "https://www.instagram.com/reel/C6f7G8h9I0j/",
  * ]
  */
-export const INSTAGRAM_REELS: string[] = ['https://www.instagram.com/reel/DdMoZXUtoVV/']
+export const INSTAGRAM_REELS: string[] = [
+  'https://www.instagram.com/reel/DdMoZXUtoVV/',
+  'https://www.instagram.com/reel/DdEIxLXt_ow/',
+]
 
 export const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/saazidea/'
