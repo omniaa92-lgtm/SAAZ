@@ -48,6 +48,7 @@ export default function InstagramReels() {
 
       {track.length > 0 ? (
         <div
+          dir="ltr"
           className="relative mt-14 w-full"
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
