@@ -59,26 +59,6 @@
     "eyebrow": "Limited-Time Offers",
     "title": "Current Offers",
     "subtitle": "Take advantage of our special packages for a limited time — book your slot now before the offer ends.",
-    "items": [
-      {
-        "badge": "15% Off",
-        "title": "Complete Protection Package",
-        "desc": "PPF protection film + exterior nano ceramic coating in one complete package at a discounted price.",
-        "cta": "Book This Offer"
-      },
-      {
-        "badge": "Summer Offer",
-        "title": "Full Thermal Insulation Package",
-        "desc": "Thermal insulation for all windows plus interior nano ceramic coating to keep the cabin cool.",
-        "cta": "Book This Offer"
-      },
-      {
-        "badge": "All-in-One Bundle",
-        "title": "Exterior Polish + Interior Clean",
-        "desc": "Restore your car's shine inside and out in a single professional care session.",
-        "cta": "Book This Offer"
-      }
-    ],
     "note": "Offers are valid for a limited time and subject to SAAZ IDEA's terms and conditions."
   },
   "whyUs": {

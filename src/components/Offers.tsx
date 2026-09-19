@@ -1,18 +1,9 @@
 import { useTranslation } from 'react-i18next'
-import { HiOutlineTag, HiOutlineArrowLongLeft, HiOutlineArrowLongRight } from 'react-icons/hi2'
-import ImagePlaceholder from './ImagePlaceholder'
-
-interface OfferItem {
-  badge: string
-  title: string
-  desc: string
-  cta: string
-}
+import { HiOutlineTag } from 'react-icons/hi2'
+import { OFFER_IMAGES } from '../config/offers'
 
 export default function Offers() {
-  const { t, i18n } = useTranslation()
-  const items = t('offers.items', { returnObjects: true }) as OfferItem[]
-  const Arrow = i18n.language === 'ar' ? HiOutlineArrowLongLeft : HiOutlineArrowLongRight
+  const { t } = useTranslation()
 
   return (
     <section id="offers" className="section-y">
@@ -26,30 +17,15 @@ export default function Offers() {
           <p className="mt-4 text-slate-600 dark:text-slate-400">{t('offers.subtitle')}</p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {items.map((offer, i) => (
-            <div
-              key={offer.title}
-              className="flex flex-col overflow-hidden rounded-2xl border border-primary-100/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-primary-900"
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {OFFER_IMAGES.map((offer) => (
+            <a
+              key={offer.src}
+              href="#booking"
+              className="block overflow-hidden rounded-2xl shadow-sm ring-1 ring-primary-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:ring-white/10"
             >
-              <div className="relative">
-                <ImagePlaceholder icon={HiOutlineTag} variant={(i % 4) as 0 | 1 | 2 | 3} className="h-44 w-full" />
-                <span className="absolute top-4 start-4 rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-primary-950 shadow-md">
-                  {offer.badge}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold">{offer.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-slate-500 dark:text-slate-400">{offer.desc}</p>
-                <a
-                  href="#booking"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent-600 transition group-hover:gap-3 dark:text-accent-400"
-                >
-                  {offer.cta}
-                  <Arrow className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
+              <img src={offer.src} alt={offer.alt} className="aspect-4/5 w-full object-cover" />
+            </a>
           ))}
         </div>
 
