@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="container-x">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Logo className="h-11 w-11" withText textClassName="text-sm" />
+            <Logo className="h-16" />
             <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">{t('footer.about')}</p>
             <div className="mt-5 flex gap-3">
               {[

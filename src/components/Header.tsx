@@ -52,7 +52,7 @@ export default function Header() {
     >
       <div className="container-x flex h-18 items-center justify-between py-3">
         <a href="#home">
-          <Logo className="h-11 w-11" withText textClassName="text-sm" />
+          <Logo className="h-12" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
