@@ -11,11 +11,8 @@ const SCROLL_SPEED_PX_PER_SEC = 70
 
 // Instagram's embed needs ~328px of real width to render cleanly (its own
 // template ships with min-width:326px) — narrower than that and it clips
-// itself. So we let it render at its natural width, then shrink the whole
-// thing visually with `zoom` (which resizes properly, unlike overflow-crop).
+// itself, so cards stay at their natural size (no shrinking/zooming).
 const EMBED_NATURAL_WIDTH = 328
-const EMBED_DISPLAY_WIDTH = 240
-const EMBED_ZOOM = EMBED_DISPLAY_WIDTH / EMBED_NATURAL_WIDTH
 
 export default function InstagramReels() {
   const { t } = useTranslation()
@@ -94,16 +91,14 @@ export default function InstagramReels() {
               <div
                 key={url + i}
                 className="shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10"
-                style={{ width: EMBED_DISPLAY_WIDTH }}
+                style={{ width: EMBED_NATURAL_WIDTH }}
               >
-                <div style={{ width: EMBED_NATURAL_WIDTH, zoom: EMBED_ZOOM }}>
-                  <blockquote
-                    className="instagram-media"
-                    data-instgrm-permalink={url}
-                    data-instgrm-version="14"
-                    style={{ width: `${EMBED_NATURAL_WIDTH}px`, margin: 0 }}
-                  />
-                </div>
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink={url}
+                  data-instgrm-version="14"
+                  style={{ width: `${EMBED_NATURAL_WIDTH}px`, margin: 0 }}
+                />
               </div>
             ))}
           </div>
