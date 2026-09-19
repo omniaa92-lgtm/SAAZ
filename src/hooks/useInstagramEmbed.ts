@@ -13,9 +13,12 @@ const SCRIPT_ID = 'instagram-embed-script'
 /**
  * Loads Instagram's official embed.js once and re-processes embeds
  * whenever `deps` changes (e.g. after the reel list renders).
+ * Pass `enabled: false` to skip loading the script entirely (e.g. on
+ * mobile, where we link out to the Instagram app instead of embedding).
  */
-export function useInstagramEmbed(deps: unknown[]) {
+export function useInstagramEmbed(deps: unknown[], enabled = true) {
   useEffect(() => {
+    if (!enabled) return
     const process = () => window.instgrm?.Embeds.process()
 
     if (window.instgrm) {
@@ -38,5 +41,5 @@ export function useInstagramEmbed(deps: unknown[]) {
 
     return () => script.removeEventListener('load', process)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, deps)
+  }, [...deps, enabled])
 }

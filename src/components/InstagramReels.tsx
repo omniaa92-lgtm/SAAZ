@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaInstagram } from 'react-icons/fa'
-import { HiOutlineFilm } from 'react-icons/hi2'
+import { HiOutlineFilm, HiOutlinePlay } from 'react-icons/hi2'
 import { INSTAGRAM_REELS, INSTAGRAM_PROFILE_URL } from '../config/instagramReels'
 import { useInstagramEmbed } from '../hooks/useInstagramEmbed'
 
@@ -14,9 +14,27 @@ const SCROLL_SPEED_PX_PER_SEC = 70
 // itself, so cards stay at their natural size (no shrinking/zooming).
 const EMBED_NATURAL_WIDTH = 328
 
+// Below this width we skip the heavy iframe embed and just link out to the
+// Instagram app/site instead — lighter, and lets the customer watch the
+// reel in the real app rather than a cramped in-page player on mobile.
+const DESKTOP_BREAKPOINT = '(min-width: 1024px)'
+
 export default function InstagramReels() {
   const { t } = useTranslation()
-  useInstagramEmbed([INSTAGRAM_REELS.length])
+
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(DESKTOP_BREAKPOINT).matches,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia(DESKTOP_BREAKPOINT)
+    const handler = () => setIsDesktop(mq.matches)
+    handler()
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  useInstagramEmbed([INSTAGRAM_REELS.length, isDesktop], isDesktop)
 
   const sectionRef = useRef<HTMLElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
@@ -38,7 +56,7 @@ export default function InstagramReels() {
     updateDuration()
     window.addEventListener('resize', updateDuration)
     return () => window.removeEventListener('resize', updateDuration)
-  }, [track.length])
+  }, [track.length, isDesktop])
 
   // Resume the marquee once the section scrolls out of view, so a tap that
   // paused it (e.g. to watch a reel) doesn't leave it stuck forever.
@@ -87,20 +105,38 @@ export default function InstagramReels() {
             onTouchStart={() => setPaused(true)}
             onPointerDown={() => setPaused(true)}
           >
-            {track.map((url, i) => (
-              <div
-                key={url + i}
-                className="shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10"
-                style={{ width: EMBED_NATURAL_WIDTH }}
-              >
-                <blockquote
-                  className="instagram-media"
-                  data-instgrm-permalink={url}
-                  data-instgrm-version="14"
-                  style={{ width: `${EMBED_NATURAL_WIDTH}px`, margin: 0 }}
-                />
-              </div>
-            ))}
+            {track.map((url, i) =>
+              isDesktop ? (
+                <div
+                  key={url + i}
+                  className="shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10"
+                  style={{ width: EMBED_NATURAL_WIDTH }}
+                >
+                  <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink={url}
+                    data-instgrm-version="14"
+                    style={{ width: `${EMBED_NATURAL_WIDTH}px`, margin: 0 }}
+                  />
+                </div>
+              ) : (
+                <a
+                  key={url + i}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative flex aspect-9/16 w-[220px] shrink-0 flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-br from-[#4F5BD5] via-[#962FBF] to-[#D62976] shadow-lg shadow-primary-950/10"
+                >
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-[#962FBF]">
+                    <HiOutlinePlay className="ms-1 h-8 w-8" />
+                  </span>
+                  <span className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+                    <FaInstagram className="h-3.5 w-3.5" />
+                    {t('reels.watchOnInstagram')}
+                  </span>
+                </a>
+              ),
+            )}
           </div>
         </div>
       ) : (
