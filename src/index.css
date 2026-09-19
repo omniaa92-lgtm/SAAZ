@@ -3,24 +3,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "Cairo", system-ui, sans-serif;
-  --font-arabic: "Cairo", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", "Tajawal", system-ui, sans-serif;
+  --font-arabic: "Tajawal", "Inter", system-ui, sans-serif;
 
-  --color-primary-50: #f0fdfa;
-  --color-primary-100: #ccfbf1;
-  --color-primary-200: #99f6e4;
-  --color-primary-300: #5eead4;
-  --color-primary-400: #2dd4bf;
-  --color-primary-500: #14b8a6;
-  --color-primary-600: #0d9488;
-  --color-primary-700: #0f766e;
-  --color-primary-800: #115e59;
-  --color-primary-900: #134e4a;
+  /* Brand navy — structural color: dark-mode backgrounds, light-mode headings */
+  --color-primary-50: #eef0fb;
+  --color-primary-100: #dadded;
+  --color-primary-200: #b7bce7;
+  --color-primary-300: #8d93d8;
+  --color-primary-400: #6068c4;
+  --color-primary-500: #4046a8;
+  --color-primary-600: #2f3488;
+  --color-primary-700: #24276b;
+  --color-primary-800: #1b1e52;
+  --color-primary-900: #14163f;
+  --color-primary-950: #0c0d28;
 
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
+  /* Brand gold — the single accent used throughout */
+  --color-accent-50: #fffaeb;
+  --color-accent-100: #fef0c7;
+  --color-accent-200: #fddf89;
+  --color-accent-300: #ffcd3f;
+  --color-accent-400: #ffc21c;
+  --color-accent-500: #f5b400;
+  --color-accent-600: #d99a00;
+  --color-accent-700: #b37a00;
 
   --animate-fade-up: fade-up 0.7s ease both;
   --animate-fade-in: fade-in 0.6s ease both;
@@ -50,7 +57,7 @@ html {
 }
 
 body {
-  @apply bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-300;
+  @apply bg-white text-slate-600 dark:bg-primary-950 dark:text-slate-300;
   font-family: var(--font-sans);
   transition:
     background-color 0.3s ease,
@@ -61,16 +68,19 @@ html[lang="ar"] body {
   font-family: var(--font-arabic);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  @apply text-slate-900 dark:text-white;
-  font-weight: 700;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-primary-950 dark:text-white;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
 }
 
 ::selection {
-  @apply bg-primary-400/30;
+  @apply bg-accent-400/30;
 }
 
 .container-x {
@@ -82,29 +92,25 @@ h4 {
 }
 
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-primary-950;
 }
 
 .btn-primary {
-  @apply btn bg-primary-600 text-white shadow-lg shadow-primary-600/20 hover:bg-primary-700 hover:shadow-primary-600/30 active:scale-[0.98];
+  @apply btn bg-gradient-to-b from-accent-400 to-accent-600 text-primary-950 shadow-lg shadow-accent-600/25 hover:shadow-accent-600/40 hover:brightness-105 active:scale-[0.98];
 }
 
 .btn-outline {
-  @apply btn border-2 border-slate-200 bg-white/60 text-slate-700 backdrop-blur hover:border-primary-400 hover:text-primary-700 active:scale-[0.98] dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-200 dark:hover:border-primary-400 dark:hover:text-primary-300;
-}
-
-.btn-accent {
-  @apply btn bg-accent-500 text-slate-900 shadow-lg shadow-accent-500/20 hover:bg-accent-400 active:scale-[0.98];
+  @apply btn border-2 border-primary-200 bg-white/60 text-primary-800 backdrop-blur hover:border-accent-500 hover:text-accent-700 active:scale-[0.98] dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:border-accent-400 dark:hover:text-accent-400;
 }
 
 .card {
-  @apply rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900;
+  @apply rounded-2xl border border-primary-100/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-primary-900;
 }
 
 .eyebrow {
-  @apply inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-1.5 text-xs font-bold tracking-wide text-primary-700 uppercase dark:bg-primary-500/10 dark:text-primary-300;
+  @apply inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-1.5 text-xs font-bold tracking-wide text-primary-700 uppercase dark:bg-accent-400/10 dark:text-accent-400;
 }
 
 .input {
-  @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-normal text-slate-800 placeholder-slate-400 transition focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-500;
+  @apply w-full rounded-xl border border-primary-200 bg-white px-4 py-2.5 text-sm font-normal text-primary-950 placeholder-slate-400 transition focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 focus:outline-none dark:border-white/15 dark:bg-primary-950 dark:text-white dark:placeholder-slate-500;
 }

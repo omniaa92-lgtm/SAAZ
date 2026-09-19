@@ -51,8 +51,8 @@ export default function Booking() {
     return (
       <section id="booking" className="section-y">
         <div className="container-x">
-          <div className="mx-auto flex max-w-lg flex-col items-center rounded-3xl border border-primary-100 bg-primary-50/60 p-10 text-center dark:border-primary-500/20 dark:bg-primary-500/5">
-            <HiOutlineCheckCircle className="h-14 w-14 text-primary-600 dark:text-primary-400" />
+          <div className="mx-auto flex max-w-lg flex-col items-center rounded-3xl border border-accent-500/30 bg-accent-400/10 p-10 text-center dark:border-accent-400/20 dark:bg-accent-400/5">
+            <HiOutlineCheckCircle className="h-14 w-14 text-accent-600 dark:text-accent-400" />
             <h3 className="mt-4 text-xl font-bold">{t('booking.form.successTitle')}</h3>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{t('booking.form.successBody')}</p>
             <button onClick={() => setStatus('idle')} className="btn-outline mt-6">
@@ -65,7 +65,7 @@ export default function Booking() {
   }
 
   return (
-    <section id="booking" className="section-y bg-slate-50 dark:bg-slate-900/40">
+    <section id="booking" className="section-y bg-primary-50/40 dark:bg-primary-900/20">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">
@@ -78,7 +78,7 @@ export default function Booking() {
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto mt-12 max-w-2xl rounded-3xl border border-slate-100 bg-white p-6 shadow-sm sm:p-10 dark:border-slate-800 dark:bg-slate-900"
+          className="mx-auto mt-12 max-w-2xl rounded-3xl border border-primary-100 bg-white p-6 shadow-sm sm:p-10 dark:border-white/10 dark:bg-primary-900"
         >
           <input type="hidden" name="_to" value={SALES_EMAIL} />
           <input type="hidden" name="_subject" value="طلب حجز جديد من موقع SAAZ IDEA" />

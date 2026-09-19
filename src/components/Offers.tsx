@@ -28,10 +28,13 @@ export default function Offers() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {items.map((offer, i) => (
-            <div key={offer.title} className="card flex flex-col overflow-hidden">
+            <div
+              key={offer.title}
+              className="flex flex-col overflow-hidden rounded-2xl border border-primary-100/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-primary-900"
+            >
               <div className="relative">
                 <ImagePlaceholder icon={HiOutlineTag} variant={(i % 4) as 0 | 1 | 2 | 3} className="h-44 w-full" />
-                <span className="absolute top-4 start-4 rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-slate-900 shadow-md">
+                <span className="absolute top-4 start-4 rounded-full bg-accent-500 px-3 py-1 text-xs font-bold text-primary-950 shadow-md">
                   {offer.badge}
                 </span>
               </div>
@@ -40,7 +43,7 @@ export default function Offers() {
                 <p className="mt-2 flex-1 text-sm text-slate-500 dark:text-slate-400">{offer.desc}</p>
                 <a
                   href="#booking"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition group-hover:gap-3 dark:text-primary-400"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-accent-600 transition group-hover:gap-3 dark:text-accent-400"
                 >
                   {offer.cta}
                   <Arrow className="h-4 w-4" />

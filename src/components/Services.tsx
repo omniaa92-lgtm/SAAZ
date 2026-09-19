@@ -1,20 +1,21 @@
 import { useTranslation } from 'react-i18next'
 import {
-  HiOutlineCalendarDays,
-  HiOutlinePaintBrush,
-  HiOutlineMegaphone,
-  HiOutlineBuildingStorefront,
-  HiOutlineCamera,
-  HiOutlineDevicePhoneMobile,
+  HiOutlineSquares2X2,
+  HiOutlineSun,
+  HiOutlineShieldCheck,
+  HiOutlineSparkles,
+  HiOutlineHandRaised,
+  HiOutlineHomeModern,
 } from 'react-icons/hi2'
+import ImagePlaceholder from './ImagePlaceholder'
 
 const ICONS = [
-  HiOutlineCalendarDays,
-  HiOutlinePaintBrush,
-  HiOutlineMegaphone,
-  HiOutlineBuildingStorefront,
-  HiOutlineCamera,
-  HiOutlineDevicePhoneMobile,
+  HiOutlineSquares2X2,
+  HiOutlineSun,
+  HiOutlineShieldCheck,
+  HiOutlineHomeModern,
+  HiOutlineSparkles,
+  HiOutlineHandRaised,
 ]
 
 interface ServiceItem {
@@ -27,7 +28,7 @@ export default function Services() {
   const list = t('services.list', { returnObjects: true }) as ServiceItem[]
 
   return (
-    <section id="services" className="section-y bg-slate-50 dark:bg-slate-900/40">
+    <section id="services" className="section-y bg-primary-50/40 dark:bg-primary-900/20">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">{t('services.eyebrow')}</span>
@@ -39,12 +40,15 @@ export default function Services() {
           {list.map((item, i) => {
             const Icon = ICONS[i % ICONS.length]
             return (
-              <div key={item.title} className="card p-6">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+              <div
+                key={item.title}
+                className="overflow-hidden rounded-2xl border border-primary-100/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-primary-900"
+              >
+                <ImagePlaceholder icon={Icon} variant={(i % 4) as 0 | 1 | 2 | 3} className="h-44 w-full" />
+                <div className="p-6">
+                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                </div>
               </div>
             )
           })}

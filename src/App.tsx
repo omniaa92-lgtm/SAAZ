@@ -6,10 +6,15 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
 import Offers from './components/Offers'
+import WhyUs from './components/WhyUs'
+import Testimonials from './components/Testimonials'
 import Portfolio from './components/Portfolio'
 import InstagramReels from './components/InstagramReels'
+import Location from './components/Location'
 import Booking from './components/Booking'
+import FinalCta from './components/FinalCta'
 import Footer from './components/Footer'
+import NationalDayPopup from './components/NationalDayPopup'
 
 function DocumentLangSync() {
   const { i18n, t } = useTranslation()
@@ -33,11 +38,16 @@ export default function App() {
         <About />
         <Services />
         <Offers />
+        <WhyUs />
+        <Testimonials />
         <Portfolio />
         <InstagramReels />
+        <Location />
         <Booking />
+        <FinalCta />
       </main>
       <Footer />
+      <NationalDayPopup />
     </ThemeProvider>
   )
 }

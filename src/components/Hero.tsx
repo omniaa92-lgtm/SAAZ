@@ -1,17 +1,16 @@
 import { useTranslation } from 'react-i18next'
 import { HiOutlineSparkles } from 'react-icons/hi'
-import { HiOutlineCalendarDays, HiOutlinePaintBrush, HiOutlineMegaphone } from 'react-icons/hi2'
-import ImagePlaceholder from './ImagePlaceholder'
+import { HiOutlineShieldCheck, HiOutlineSquares2X2 } from 'react-icons/hi2'
 
 export default function Hero() {
   const { t } = useTranslation()
   const stats = t('hero.stats', { returnObjects: true }) as Record<string, string>
 
   const statValues = [
-    { value: '+250', label: stats.projects },
-    { value: '+120', label: stats.clients },
+    { value: '+2500', label: stats.projects },
+    { value: '+1200', label: stats.clients },
     { value: '+8', label: stats.years },
-    { value: '+20', label: stats.team },
+    { value: '10', label: stats.team },
   ]
 
   return (
@@ -37,16 +36,16 @@ export default function Hero() {
             <a href="#booking" className="btn-primary">
               {t('hero.ctaPrimary')}
             </a>
-            <a href="#portfolio" className="btn-outline">
+            <a href="#services" className="btn-outline">
               {t('hero.ctaSecondary')}
             </a>
           </div>
 
-          <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-slate-100 pt-8 sm:grid-cols-4 dark:border-slate-800">
+          <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-primary-100 pt-8 sm:grid-cols-4 dark:border-white/10">
             {statValues.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="text-2xl font-extrabold text-primary-600 dark:text-primary-400">{s.value}</dd>
+                <dd className="text-2xl font-extrabold text-accent-600 dark:text-accent-400">{s.value}</dd>
                 <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{s.label}</div>
               </div>
             ))}
@@ -54,25 +53,24 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-in relative">
-          <ImagePlaceholder
-            icon={HiOutlineSparkles}
-            variant={0}
-            className="aspect-4/5 w-full rounded-3xl shadow-2xl shadow-primary-900/20"
+          <img
+            src="/images/hero-detailing.webp"
+            alt="فريق ساز آيديا أثناء تلميع سيارة"
+            className="aspect-4/5 w-full rounded-3xl object-cover shadow-2xl shadow-primary-950/25 ring-1 ring-accent-400/30"
           />
-          <div className="absolute -bottom-6 -start-6 hidden w-48 rounded-2xl border border-slate-100 bg-white p-4 shadow-xl sm:block dark:border-slate-800 dark:bg-slate-900">
-            <ImagePlaceholder icon={HiOutlineCalendarDays} variant={1} className="mb-3 h-20 w-full rounded-lg" />
-            <p className="text-xs font-semibold text-slate-700 dark:text-slate-200">{t('services.list.0.title')}</p>
-          </div>
-          <div className="absolute -top-6 -end-4 hidden rounded-2xl border border-slate-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-slate-800 dark:bg-slate-900">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/20 text-accent-500">
-              <HiOutlineMegaphone className="h-5 w-5" />
+          <div className="absolute -bottom-6 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
+              <HiOutlineShieldCheck className="h-6 w-6" />
             </span>
-            <span className="pe-1 text-xs font-semibold text-slate-700 dark:text-slate-200">
-              {t('services.list.2.title')}
-            </span>
+            <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
           </div>
-          <div className="absolute top-1/2 -end-8 hidden -translate-y-1/2 items-center gap-2 rounded-full border border-slate-100 bg-white px-3 py-2 shadow-xl md:flex dark:border-slate-800 dark:bg-slate-900">
-            <HiOutlinePaintBrush className="h-4 w-4 text-primary-600 dark:text-primary-400" />
+          <div className="absolute top-4 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
+              <HiOutlineSquares2X2 className="h-5 w-5" />
+            </span>
+            <span className="pe-1 text-xs font-semibold text-primary-900 dark:text-slate-100">
+              {t('services.list.0.title')}
+            </span>
           </div>
         </div>
       </div>

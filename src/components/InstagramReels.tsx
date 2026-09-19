@@ -9,7 +9,7 @@ export default function InstagramReels() {
   useInstagramEmbed([INSTAGRAM_REELS.length])
 
   return (
-    <section id="reels" className="section-y bg-slate-50 dark:bg-slate-900/40">
+    <section id="reels" className="section-y bg-primary-50/40 dark:bg-primary-900/20">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">
@@ -34,8 +34,8 @@ export default function InstagramReels() {
             ))}
           </div>
         ) : (
-          <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl border-2 border-dashed border-slate-200 py-16 text-center dark:border-slate-800">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-600 dark:bg-primary-500/10 dark:text-primary-400">
+          <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl border-2 border-dashed border-primary-200 py-16 text-center dark:border-white/15">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
               <HiOutlineFilm className="h-7 w-7" />
             </span>
             <p className="text-sm text-slate-500 dark:text-slate-400">{t('reels.comingSoon')}</p>
