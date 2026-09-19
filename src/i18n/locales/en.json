@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "SAAZ IDEA",
+    "description": "SAAZ IDEA — a creative agency specialized in event management, branding, and advertising."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "offers": "Offers",
+    "portfolio": "Portfolio",
+    "reels": "Reels",
+    "booking": "Book Now",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "A Saudi Creative Agency",
+    "title": "We Turn Your Ideas Into Unforgettable Experiences",
+    "subtitle": "SAAZ IDEA is a full-service creative agency specialized in event management, branding, exhibition design, and advertising — we take you from idea to execution.",
+    "ctaPrimary": "Book a Free Consultation",
+    "ctaSecondary": "View Our Work",
+    "stats": {
+      "projects": "Completed Projects",
+      "clients": "Happy Clients",
+      "years": "Years of Experience",
+      "team": "Creative Experts"
+    }
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Your Creative Partner, From Idea to Execution",
+    "description": "Since day one, we've believed every brand deserves a story told differently. At SAAZ IDEA, we combine creativity with precise planning to deliver end-to-end solutions in event management, design, and marketing — powered by a passionate Saudi team committed to the highest professional standards.",
+    "points": [
+      { "title": "Specialized Team", "desc": "A team of designers, planners, and marketing experts under one roof." },
+      { "title": "Precise Execution", "desc": "We stay on schedule and on budget without compromising quality." },
+      { "title": "Creative Ideas", "desc": "Every project gets a unique identity that reflects our client's personality." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Our Services",
+    "title": "Integrated Creative Solutions, Under One Roof",
+    "subtitle": "From first idea to final execution, we offer a full range of services for individuals and businesses alike.",
+    "list": [
+      { "title": "Event Planning & Production", "desc": "Planning and executing parties, conferences, and special occasions down to the last detail." },
+      { "title": "Branding & Visual Identity", "desc": "Logos and complete visual identities that express your brand." },
+      { "title": "Advertising & Marketing", "desc": "Creative campaigns across digital and traditional media." },
+      { "title": "Exhibition & Booth Design", "desc": "Designing and building professional booths and exhibitions that stand out." },
+      { "title": "Media Production & Photography", "desc": "Professional photo and video production for your events and campaigns." },
+      { "title": "Digital Marketing", "desc": "Social media management and effective digital marketing strategies." }
+    ]
+  },
+  "offers": {
+    "eyebrow": "Limited-Time Offers",
+    "title": "Current Offers",
+    "subtitle": "Take advantage of our special packages for a limited time — book your slot now before the offer ends.",
+    "items": [
+      {
+        "badge": "20% Off",
+        "title": "Private Events Package",
+        "desc": "Full planning and execution for weddings and family occasions at a discounted rate.",
+        "cta": "Book This Offer"
+      },
+      {
+        "badge": "Startup Offer",
+        "title": "Exhibition & Booth Package",
+        "desc": "Complete exhibition booth design and setup at competitive rates for startups.",
+        "cta": "Book This Offer"
+      },
+      {
+        "badge": "All-in-One Bundle",
+        "title": "Branding + Launch Campaign",
+        "desc": "A full visual identity plus a social media launch campaign.",
+        "cta": "Book This Offer"
+      }
+    ],
+    "note": "Offers are valid for a limited time and subject to SAAZ IDEA's terms and conditions."
+  },
+  "portfolio": {
+    "eyebrow": "Our Work",
+    "title": "A Glimpse of Our Projects",
+    "subtitle": "Selected events and campaigns we've delivered for our clients.",
+    "categories": {
+      "event": "Event",
+      "exhibition": "Exhibition",
+      "branding": "Branding",
+      "campaign": "Campaign"
+    },
+    "viewMore": "See More of Our Work"
+  },
+  "reels": {
+    "eyebrow": "Follow Us on Instagram",
+    "title": "Our Latest Work on Video",
+    "subtitle": "Watch our latest events and projects as documented on our Instagram account.",
+    "followCta": "Follow Us on Instagram",
+    "comingSoon": "Videos will be added here soon"
+  },
+  "booking": {
+    "eyebrow": "Book Now",
+    "title": "Book Your Service with SAAZ IDEA",
+    "subtitle": "Fill out the form and our sales team will reach out within 24 hours to discuss your project.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Enter your name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "05xxxxxxxx",
+      "email": "Email Address",
+      "emailPlaceholder": "example@email.com",
+      "service": "Service Type",
+      "serviceOptions": [
+        "Event Planning & Production",
+        "Branding & Visual Identity",
+        "Advertising & Marketing",
+        "Exhibition & Booth Design",
+        "Media Production & Photography",
+        "Digital Marketing",
+        "Other"
+      ],
+      "date": "Preferred Date",
+      "message": "Additional Details",
+      "messagePlaceholder": "Tell us more about your project...",
+      "submit": "Send Booking Request",
+      "submitting": "Sending...",
+      "successTitle": "Your Request Was Received!",
+      "successBody": "Thank you for contacting SAAZ IDEA. Our sales team will reach out within 24 hours via phone or email.",
+      "errorTitle": "Something Went Wrong",
+      "errorBody": "We couldn't send your request. Please try again or contact us directly by email.",
+      "newRequest": "Send Another Request",
+      "required": "This field is required"
+    }
+  },
+  "footer": {
+    "about": "SAAZ IDEA — a Saudi creative agency specialized in event management, design, and advertising.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "email": "saazidea@gmail.com",
+    "phone": "+966 5X XXX XXXX",
+    "location": "Riyadh, Saudi Arabia",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "switchToEnglish": "English",
+    "switchToArabic": "العربية",
+    "toggleTheme": "Toggle light/dark mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  }
+}
