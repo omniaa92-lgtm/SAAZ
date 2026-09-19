@@ -18,6 +18,7 @@ export const INSTAGRAM_REELS: string[] = [
   'https://www.instagram.com/reel/DbsjyTENW4k/',
   'https://www.instagram.com/reel/Da-lcaHNXhz/',
   'https://www.instagram.com/reel/DayEtM9tIgC/',
+  'https://www.instagram.com/reel/Db0FJIjt_oC/',
 ]
 
 export const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/saazidea/'
