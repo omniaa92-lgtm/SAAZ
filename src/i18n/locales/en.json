@@ -179,6 +179,15 @@
   },
   "footer": {
     "about": "We care for your car as it deserves, because details make the difference.",
+    "servicesTitle": "Our Services",
+    "services": [
+      "PPF Protection Film",
+      "Nano Ceramic",
+      "Thermal Insulation",
+      "Car Polishing",
+      "Windshield Protection",
+      "Car Color Change (Wrap)"
+    ],
     "quickLinks": "Links",
     "contact": "Contact",
     "email": "saazidea@gmail.com",

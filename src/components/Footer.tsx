@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-primary-100 bg-primary-50/50 pt-16 pb-8 dark:border-white/10 dark:bg-primary-900/40">
       <div className="container-x">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <Logo className="h-16" />
             <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">{t('footer.about')}</p>
@@ -49,6 +49,18 @@ export default function Footer() {
                   >
                     {t(`nav.${key}`)}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-bold text-primary-950 dark:text-white">{t('footer.servicesTitle')}</h4>
+            <ul className="mt-4 space-y-2.5">
+              {(t('footer.services', { returnObjects: true }) as string[]).map((service) => (
+                <li key={service} className="flex items-start gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" />
+                  {service}
                 </li>
               ))}
             </ul>
