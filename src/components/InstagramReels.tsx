@@ -1,15 +1,37 @@
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaInstagram } from 'react-icons/fa'
 import { HiOutlineFilm } from 'react-icons/hi2'
 import { INSTAGRAM_REELS, INSTAGRAM_PROFILE_URL } from '../config/instagramReels'
 import { useInstagramEmbed } from '../hooks/useInstagramEmbed'
 
+// Constant scroll speed (px/s) so the marquee stays a steady, medium pace
+// no matter how many reels are added — duration is derived from content width.
+const SCROLL_SPEED_PX_PER_SEC = 70
+
 export default function InstagramReels() {
   const { t } = useTranslation()
   useInstagramEmbed([INSTAGRAM_REELS.length])
 
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [duration, setDuration] = useState(60)
+
   // Duplicate the list so the marquee loops seamlessly (translateX(-50%) = exactly one set).
   const track = INSTAGRAM_REELS.length > 0 ? [...INSTAGRAM_REELS, ...INSTAGRAM_REELS] : []
+
+  useEffect(() => {
+    const el = trackRef.current
+    if (!el) return
+
+    const updateDuration = () => {
+      const oneSetWidth = el.scrollWidth / 2
+      if (oneSetWidth > 0) setDuration(oneSetWidth / SCROLL_SPEED_PX_PER_SEC)
+    }
+
+    updateDuration()
+    window.addEventListener('resize', updateDuration)
+    return () => window.removeEventListener('resize', updateDuration)
+  }, [track.length])
 
   return (
     <section id="reels" className="section-y overflow-hidden bg-primary-50/40 dark:bg-primary-900/20">
@@ -32,7 +54,11 @@ export default function InstagramReels() {
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
           }}
         >
-          <div className="animate-marquee flex w-max gap-6 hover:[animation-play-state:paused]">
+          <div
+            ref={trackRef}
+            className="animate-marquee flex w-max gap-6 hover:[animation-play-state:paused]"
+            style={{ animationDuration: `${duration}s` }}
+          >
             {track.map((url, i) => (
               <div
                 key={url + i}
