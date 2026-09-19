@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { HiStar } from 'react-icons/hi'
 import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlineMapPin, HiOutlineChatBubbleLeftRight } from 'react-icons/hi2'
 import { TESTIMONIALS } from '../config/testimonials'
 import { GOOGLE_MAPS_URL } from '../config/location'
+import GoogleIcon from './GoogleIcon'
+
+const AVATAR_COLORS = ['bg-[#1a73e8]', 'bg-[#188038]', 'bg-[#e8710a]', 'bg-[#9334e6]', 'bg-[#d93025]']
 
 export default function Testimonials() {
   const { t } = useTranslation()
@@ -44,27 +46,36 @@ export default function Testimonials() {
             {TESTIMONIALS.map((rev, i) => (
               <article
                 key={rev.name + i}
-                className="w-[85%] shrink-0 snap-start rounded-2xl bg-primary-950 p-6 text-start shadow-xl shadow-primary-950/20 sm:w-[46%] lg:w-[23%]"
+                className="w-[85%] shrink-0 snap-start rounded-2xl bg-white p-5 text-start shadow-xl shadow-primary-950/15 sm:w-[46%] lg:w-[23%]"
               >
-                <p className="line-clamp-6 text-sm leading-relaxed text-slate-200">“{rev.text}”</p>
-                <div className="mt-5 flex items-center gap-3">
-                  {rev.avatarUrl ? (
-                    <img src={rev.avatarUrl} alt={rev.name} className="h-9 w-9 rounded-full object-cover" />
-                  ) : (
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-400/15 text-sm font-bold text-accent-400">
-                      {rev.name.trim().charAt(0)}
-                    </span>
-                  )}
-                  <div>
-                    <p className="text-sm font-bold text-accent-400">{rev.name}</p>
-                    <p className="text-xs text-slate-400">{rev.timeAgo}</p>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center gap-3">
+                    {rev.avatarUrl ? (
+                      <img src={rev.avatarUrl} alt={rev.name} className="h-10 w-10 rounded-full object-cover" />
+                    ) : (
+                      <span
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${AVATAR_COLORS[i % AVATAR_COLORS.length]}`}
+                      >
+                        {rev.name.trim().charAt(0)}
+                      </span>
+                    )}
+                    <div>
+                      <p className="text-sm font-medium text-slate-800">{rev.name}</p>
+                      <p className="text-xs text-slate-500">{rev.timeAgo}</p>
+                    </div>
                   </div>
+                  <GoogleIcon className="h-4.5 w-4.5 shrink-0" />
                 </div>
-                <div className="mt-3 flex gap-0.5 text-accent-400">
+
+                <div className="mt-3 flex gap-0.5">
                   {Array.from({ length: rev.rating }).map((_, s) => (
-                    <HiStar key={s} className="h-4 w-4" />
+                    <svg key={s} viewBox="0 0 20 20" className="h-4 w-4 fill-[#fbbc04]">
+                      <path d="M10 1l2.6 5.61 6.18.6-4.65 4.26 1.32 6.07L10 14.77 4.55 17.54l1.32-6.07L1.22 7.21l6.18-.6z" />
+                    </svg>
                   ))}
                 </div>
+
+                <p className="mt-3 line-clamp-6 text-sm leading-relaxed text-slate-600">{rev.text}</p>
               </article>
             ))}
           </div>
