@@ -52,7 +52,7 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="animate-fade-in relative">
+        <div className="animate-fade-in relative hidden lg:block">
           <img
             src="/images/hero-detailing.webp"
             alt="فريق ساز آيديا أثناء تلميع سيارة"
