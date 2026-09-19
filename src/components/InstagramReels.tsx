@@ -56,13 +56,13 @@ export default function InstagramReels() {
         >
           <div
             ref={trackRef}
-            className="animate-marquee flex w-max gap-6 hover:[animation-play-state:paused]"
+            className="animate-marquee flex w-max gap-4 hover:[animation-play-state:paused]"
             style={{ animationDuration: `${duration}s` }}
           >
             {track.map((url, i) => (
               <div
                 key={url + i}
-                className="w-[300px] shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10 sm:w-[340px]"
+                className="w-[220px] shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10 sm:w-[250px]"
               >
                 <blockquote
                   className="instagram-media"
