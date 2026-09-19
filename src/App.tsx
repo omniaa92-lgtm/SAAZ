@@ -38,13 +38,13 @@ export default function App() {
         <Hero />
         <About />
         <Services />
+        <TabbyBanner />
         <Offers />
         <WhyUs />
         <Testimonials />
         <Portfolio />
         <InstagramReels />
         <Location />
-        <TabbyBanner />
         <Booking />
         <FinalCta />
       </main>
