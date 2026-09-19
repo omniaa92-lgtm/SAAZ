@@ -9,12 +9,22 @@ import { useInstagramEmbed } from '../hooks/useInstagramEmbed'
 // no matter how many reels are added — duration is derived from content width.
 const SCROLL_SPEED_PX_PER_SEC = 70
 
+// Instagram's embed needs ~328px of real width to render cleanly (its own
+// template ships with min-width:326px) — narrower than that and it clips
+// itself. So we let it render at its natural width, then shrink the whole
+// thing visually with `zoom` (which resizes properly, unlike overflow-crop).
+const EMBED_NATURAL_WIDTH = 328
+const EMBED_DISPLAY_WIDTH = 240
+const EMBED_ZOOM = EMBED_DISPLAY_WIDTH / EMBED_NATURAL_WIDTH
+
 export default function InstagramReels() {
   const { t } = useTranslation()
   useInstagramEmbed([INSTAGRAM_REELS.length])
 
+  const sectionRef = useRef<HTMLElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
   const [duration, setDuration] = useState(60)
+  const [paused, setPaused] = useState(false)
 
   // Duplicate the list so the marquee loops seamlessly (translateX(-50%) = exactly one set).
   const track = INSTAGRAM_REELS.length > 0 ? [...INSTAGRAM_REELS, ...INSTAGRAM_REELS] : []
@@ -33,8 +43,24 @@ export default function InstagramReels() {
     return () => window.removeEventListener('resize', updateDuration)
   }, [track.length])
 
+  // Resume the marquee once the section scrolls out of view, so a tap that
+  // paused it (e.g. to watch a reel) doesn't leave it stuck forever.
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) setPaused(false)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="reels" className="section-y overflow-hidden bg-primary-50/40 dark:bg-primary-900/20">
+    <section
+      ref={sectionRef}
+      id="reels"
+      className="section-y overflow-hidden bg-primary-50/40 dark:bg-primary-900/20"
+    >
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">
@@ -57,20 +83,27 @@ export default function InstagramReels() {
         >
           <div
             ref={trackRef}
-            className="animate-marquee flex w-max gap-4 hover:[animation-play-state:paused]"
-            style={{ animationDuration: `${duration}s` }}
+            className="animate-marquee flex w-max gap-4"
+            style={{ animationDuration: `${duration}s`, animationPlayState: paused ? 'paused' : 'running' }}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+            onTouchStart={() => setPaused(true)}
+            onPointerDown={() => setPaused(true)}
           >
             {track.map((url, i) => (
               <div
                 key={url + i}
-                className="w-[220px] shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10 sm:w-[250px]"
+                className="shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary-950/10"
+                style={{ width: EMBED_DISPLAY_WIDTH }}
               >
-                <blockquote
-                  className="instagram-media"
-                  data-instgrm-permalink={url}
-                  data-instgrm-version="14"
-                  style={{ width: '100%', margin: 0 }}
-                />
+                <div style={{ width: EMBED_NATURAL_WIDTH, zoom: EMBED_ZOOM }}>
+                  <blockquote
+                    className="instagram-media"
+                    data-instgrm-permalink={url}
+                    data-instgrm-version="14"
+                    style={{ width: `${EMBED_NATURAL_WIDTH}px`, margin: 0 }}
+                  />
+                </div>
               </div>
             ))}
           </div>
