@@ -18,7 +18,7 @@ export default function About() {
           <img
             src="/images/about-showroom.jpg"
             alt="معرض ساز آيديا"
-            className="aspect-square w-full rounded-3xl object-cover shadow-xl shadow-primary-950/15 ring-1 ring-accent-400/30"
+            className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl shadow-primary-950/15 ring-1 ring-accent-400/30"
           />
           <div className="absolute -bottom-6 -end-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
