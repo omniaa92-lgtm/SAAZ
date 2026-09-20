@@ -7,8 +7,8 @@ export default function Hero() {
   const stats = t('hero.stats', { returnObjects: true }) as Record<string, string>
 
   const statValues = [
-    { value: '+2500', label: stats.projects },
-    { value: '+1200', label: stats.clients },
+    { value: '+1000', label: stats.projects },
+    { value: '+500', label: stats.clients },
     { value: '+8', label: stats.years },
     { value: '10', label: stats.team },
   ]
