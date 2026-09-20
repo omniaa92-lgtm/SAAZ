@@ -53,11 +53,13 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-in relative hidden lg:block">
-          <img
-            src="/images/hero-detailing.webp"
-            alt="فريق ساز آيديا أثناء تلميع سيارة"
-            className="aspect-4/5 w-full rounded-3xl object-cover shadow-2xl shadow-primary-950/25 ring-1 ring-accent-400/30"
-          />
+          <div className="aspect-video w-full rounded-3xl bg-gradient-to-br from-primary-50 to-primary-100 p-4 shadow-2xl shadow-primary-950/25 ring-1 ring-accent-400/30 dark:from-primary-900 dark:to-primary-950">
+            <img
+              src="/images/hero-detailing.webp"
+              alt="فريق ساز آيديا أثناء تلميع سيارة"
+              className="h-full w-full object-contain"
+            />
+          </div>
           <div className="absolute -bottom-6 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
               <HiOutlineShieldCheck className="h-6 w-6" />
