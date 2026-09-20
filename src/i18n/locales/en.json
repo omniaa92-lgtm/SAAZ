@@ -109,6 +109,7 @@
       "namePlaceholder": "Enter your name",
       "phone": "Phone Number",
       "phonePlaceholder": "05xxxxxxxx",
+      "phoneHint": "Please enter a 10-digit phone number",
       "email": "Email Address",
       "emailPlaceholder": "example@email.com",
       "service": "Service Type",

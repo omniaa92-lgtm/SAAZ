@@ -109,6 +109,7 @@
       "namePlaceholder": "اكتب اسمك",
       "phone": "رقم الجوال",
       "phonePlaceholder": "05xxxxxxxx",
+      "phoneHint": "الرجاء إدخال رقم جوال مكوّن من 10 أرقام",
       "email": "البريد الإلكتروني",
       "emailPlaceholder": "example@email.com",
       "service": "نوع الخدمة",

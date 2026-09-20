@@ -98,6 +98,10 @@ export default function Booking() {
                 type="tel"
                 name="phone"
                 required
+                inputMode="numeric"
+                pattern="[0-9]{10}"
+                maxLength={10}
+                title={t('booking.form.phoneHint')}
                 placeholder={t('booking.form.phonePlaceholder')}
                 className="input"
               />
