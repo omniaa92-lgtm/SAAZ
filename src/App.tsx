@@ -8,7 +8,7 @@ import Services from './components/Services'
 import Offers from './components/Offers'
 import WhyUs from './components/WhyUs'
 import Testimonials from './components/Testimonials'
-import Portfolio from './components/Portfolio'
+// import Portfolio from './components/Portfolio' // hidden temporarily
 import InstagramReels from './components/InstagramReels'
 import Location from './components/Location'
 import TabbyBanner from './components/TabbyBanner'
@@ -42,7 +42,7 @@ export default function App() {
         <Offers />
         <WhyUs />
         <Testimonials />
-        <Portfolio />
+        {/* <Portfolio /> hidden temporarily */}
         <InstagramReels />
         <Location />
         <Booking />
