@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaInstagram } from 'react-icons/fa'
 import { HiOutlineFilm } from 'react-icons/hi2'
@@ -19,26 +19,17 @@ export default function InstagramReels() {
   useInstagramEmbed([INSTAGRAM_REELS.length])
 
   const sectionRef = useRef<HTMLElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
-  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [duration, setDuration] = useState(60)
-  const [paused, setPaused] = useState(false)
-
-  // A tap pauses the marquee so the user can watch a reel in place. There is
-  // no reliable "video finished" signal from the embedded iframe, so resume
-  // automatically after a while of no further taps — otherwise, on mobile
-  // (no hover to un-pause), the strip stays frozen forever once a video ends.
-  const pauseWithAutoResume = () => {
-    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
-    setPaused(true)
-    resumeTimerRef.current = setTimeout(() => setPaused(false), 20000)
-  }
-
-  useEffect(() => {
-    return () => {
-      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
-    }
-  }, [])
+  const [hoverPaused, setHoverPaused] = useState(false)
+  // Once the visitor taps/clicks into the strip (to watch a reel), the
+  // marquee stops for good and the strip becomes a plain horizontally
+  // scrollable list they can swipe through by hand — there's no reliable
+  // "video finished" signal from the embedded iframe, so auto-resuming
+  // later would yank the strip out from under them mid-watch. It only
+  // goes back to auto-scrolling on a full page reload.
+  const [manual, setManual] = useState(false)
 
   // Duplicate the list so the marquee loops seamlessly (translateX(-50%) = exactly one set).
   const track = INSTAGRAM_REELS.length > 0 ? [...INSTAGRAM_REELS, ...INSTAGRAM_REELS] : []
@@ -57,20 +48,31 @@ export default function InstagramReels() {
     return () => window.removeEventListener('resize', updateDuration)
   }, [track.length])
 
-  // Resume the marquee once the section scrolls out of view, so a tap that
-  // paused it (e.g. to watch a reel) doesn't leave it stuck forever.
-  useEffect(() => {
-    const el = sectionRef.current
-    if (!el) return
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) {
-        if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
-        setPaused(false)
-      }
-    })
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+  const pendingScrollLeftRef = useRef(0)
+
+  const switchToManual = () => {
+    if (manual) return
+    const trackEl = trackRef.current
+    if (!trackEl) return
+
+    // Read the marquee's current on-screen offset from its live transform
+    // matrix — applied to the wrapper's scrollLeft below, once the wrapper
+    // has actually become scrollable, so freezing the animation and
+    // switching to real scrolling doesn't visually jump the strip.
+    const matrix = new DOMMatrixReadOnly(window.getComputedStyle(trackEl).transform)
+    pendingScrollLeftRef.current = -matrix.m41
+
+    setManual(true)
+  }
+
+  // Runs after the wrapper's class switches to overflow-x-auto — setting
+  // scrollLeft any earlier (while it's still overflow-hidden) gets silently
+  // ignored by the browser.
+  useLayoutEffect(() => {
+    if (manual && wrapperRef.current) {
+      wrapperRef.current.scrollLeft = pendingScrollLeftRef.current
+    }
+  }, [manual])
 
   return (
     <section
@@ -91,8 +93,9 @@ export default function InstagramReels() {
 
       {track.length > 0 ? (
         <div
+          ref={wrapperRef}
           dir="ltr"
-          className="relative mt-14 w-full"
+          className={`relative mt-14 w-full ${manual ? 'scrollbar-none overflow-x-auto' : 'overflow-hidden'}`}
           style={{
             maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
@@ -100,12 +103,12 @@ export default function InstagramReels() {
         >
           <div
             ref={trackRef}
-            className="animate-marquee flex w-max gap-4"
-            style={{ animationDuration: `${duration}s`, animationPlayState: paused ? 'paused' : 'running' }}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            onTouchStart={pauseWithAutoResume}
-            onPointerDown={pauseWithAutoResume}
+            className={`flex w-max gap-4 ${manual ? '' : 'animate-marquee'}`}
+            style={manual ? undefined : { animationDuration: `${duration}s`, animationPlayState: hoverPaused ? 'paused' : 'running' }}
+            onMouseEnter={() => setHoverPaused(true)}
+            onMouseLeave={() => setHoverPaused(false)}
+            onTouchStart={switchToManual}
+            onPointerDown={switchToManual}
           >
             {track.map((url, i) => (
               <div
