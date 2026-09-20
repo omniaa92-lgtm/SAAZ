@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { HiOutlineEnvelope, HiOutlinePhone, HiOutlineMapPin } from 'react-icons/hi2'
-import { FaInstagram, FaTwitter, FaTiktok, FaWhatsapp } from 'react-icons/fa'
+import { FaInstagram, FaSnapchatGhost, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 import { INSTAGRAM_PROFILE_URL } from '../config/instagramReels'
 import { GOOGLE_MAPS_URL } from '../config/location'
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../config/contact'
@@ -24,7 +24,10 @@ export default function Footer() {
               {[
                 { Icon: FaInstagram, href: INSTAGRAM_PROFILE_URL },
                 { Icon: FaWhatsapp, href: WHATSAPP_URL },
-                { Icon: FaTwitter, href: 'https://twitter.com/' },
+                {
+                  Icon: FaSnapchatGhost,
+                  href: 'https://profile.snapchat.com/e4159b79-a30a-4ee9-87d5-3596046ebcb2/profiles/00d5733c-e707-4c97-b073-5cc1f514be98/details/public-stories',
+                },
                 { Icon: FaTiktok, href: 'https://www.tiktok.com/' },
               ].map(({ Icon, href }, i) => (
                 <a
