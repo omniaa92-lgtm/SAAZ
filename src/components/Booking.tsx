@@ -102,11 +102,10 @@ export default function Booking() {
                 className="input"
               />
             </Field>
-            <Field label={t('booking.form.email')} required>
+            <Field label={t('booking.form.email')}>
               <input
                 type="email"
                 name="email"
-                required
                 placeholder={t('booking.form.emailPlaceholder')}
                 className="input"
               />
