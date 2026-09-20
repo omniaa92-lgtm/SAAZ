@@ -114,8 +114,13 @@ export default function Booking() {
                 className="input"
               />
             </Field>
-            <Field label={t('booking.form.date')} className="min-w-0">
-              <input type="date" name="preferred_date" className="input w-full min-w-0" />
+            <Field label={t('booking.form.date')} className="min-w-0 overflow-hidden">
+              <input
+                type="date"
+                name="preferred_date"
+                className="input min-w-0"
+                style={{ width: '1px', minWidth: '100%' }}
+              />
             </Field>
             <Field label={t('booking.form.service')} className="sm:col-span-2" required>
               <select name="service" required defaultValue="" className="input">
