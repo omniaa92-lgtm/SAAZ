@@ -138,7 +138,8 @@
   "location": {
     "title": "We'd Be Honored to Welcome You to Our Showroom in Jeddah",
     "subtitle": "Visit our showroom to see our services up close and meet the team.",
-    "cta": "Open in Google Maps"
+    "cta": "Open in Google Maps",
+    "loading": "Loading map…"
   },
   "nationalDay": {
     "badge": "Saudi National Day Offers 🇸🇦",
