@@ -31,7 +31,7 @@ export default function Testimonials() {
             href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary-950 px-5 py-2.5 text-sm font-bold text-accent-400 shadow-lg transition hover:bg-primary-900"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary-950 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition hover:bg-primary-900 active:bg-accent-400 active:text-primary-950"
           >
             <HiOutlineMapPin className="h-4 w-4" />
             {t('testimonials.viewOnGoogle')}
@@ -114,7 +114,7 @@ export default function Testimonials() {
             href={GOOGLE_MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary-950 px-5 py-2.5 text-sm font-bold text-accent-400 shadow-lg transition hover:bg-primary-900"
+            className="inline-flex items-center gap-2 rounded-full bg-primary-950 px-5 py-2.5 text-sm font-bold text-white shadow-lg transition hover:bg-primary-900 active:bg-accent-400 active:text-primary-950"
           >
             <HiOutlineChatBubbleLeftRight className="h-4 w-4" />
             {t('testimonials.writeReview')}
