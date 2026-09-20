@@ -1,7 +1,48 @@
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HiOutlineSparkles } from 'react-icons/hi'
 import { HiOutlineShieldCheck, HiOutlineSquares2X2 } from 'react-icons/hi2'
 import { WHATSAPP_URL } from '../config/contact'
+
+// Counts up from 0 to `target` once the number scrolls into view, so the
+// stats feel alive on first load instead of just appearing as static text.
+function CountUpStat({ target, prefix = '' }: { target: number; prefix?: string }) {
+  const ref = useRef<HTMLElement>(null)
+  const [value, setValue] = useState(0)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    let started = false
+    const duration = 1500
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || started) return
+        started = true
+        const start = performance.now()
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1)
+          const eased = 1 - Math.pow(1 - progress, 3)
+          setValue(Math.round(eased * target))
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+        observer.disconnect()
+      },
+      { threshold: 0.3 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target])
+
+  return (
+    <dd ref={ref} className="text-2xl font-extrabold text-accent-600 dark:text-accent-400">
+      {prefix}
+      {value}
+    </dd>
+  )
+}
 
 function HeroVisual({ className = '' }: { className?: string }) {
   const { t } = useTranslation()
@@ -38,10 +79,10 @@ export default function Hero() {
   const stats = t('hero.stats', { returnObjects: true }) as Record<string, string>
 
   const statValues = [
-    { value: '+200', label: stats.projects },
-    { value: '+200', label: stats.clients },
-    { value: '+4', label: stats.years },
-    { value: '+5', label: stats.team },
+    { target: 200, label: stats.projects },
+    { target: 200, label: stats.clients },
+    { target: 4, label: stats.years },
+    { target: 5, label: stats.team },
   ]
 
   return (
@@ -85,7 +126,7 @@ export default function Hero() {
             {statValues.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="text-2xl font-extrabold text-accent-600 dark:text-accent-400">{s.value}</dd>
+                <CountUpStat target={s.target} prefix="+" />
                 <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">{s.label}</div>
               </div>
             ))}
