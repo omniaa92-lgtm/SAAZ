@@ -25,7 +25,7 @@ export default function About() {
               <HiOutlineShieldCheck className="h-6 w-6" />
             </span>
             <div>
-              <p className="text-sm font-extrabold text-primary-900 dark:text-white">10+</p>
+              <p className="text-sm font-extrabold text-primary-900 dark:text-white">5+</p>
               <p className="text-xs text-slate-500 dark:text-slate-400">{t('hero.stats.team')}</p>
             </div>
           </div>
