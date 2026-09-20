@@ -52,7 +52,7 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="animate-fade-in relative hidden lg:-mx-10 lg:block lg:w-[calc(100%+5rem)]">
+        <div className="animate-fade-in relative mt-4 lg:mt-0 lg:-mx-10 lg:w-[calc(100%+5rem)]">
           <img
             src="/images/hero-detailing.webp"
             alt="فريق ساز آيديا أثناء تلميع سيارة"
@@ -68,7 +68,7 @@ export default function Hero() {
             <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
           </div>
           <div
-            className="animate-float absolute top-8 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900"
+            className="animate-float absolute -top-6 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
               <HiOutlineSquares2X2 className="h-5 w-5" />
