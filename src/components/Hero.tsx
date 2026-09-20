@@ -53,20 +53,23 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-in relative hidden lg:block">
-          <div className="aspect-video w-full rounded-3xl bg-gradient-to-br from-primary-50 to-primary-100 p-4 shadow-2xl shadow-primary-950/25 ring-1 ring-accent-400/30 dark:from-primary-900 dark:to-primary-950">
-            <img
-              src="/images/hero-detailing.webp"
-              alt="فريق ساز آيديا أثناء تلميع سيارة"
-              className="h-full w-full object-contain"
-            />
-          </div>
-          <div className="absolute -bottom-6 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900">
+          <img
+            src="/images/hero-detailing.webp"
+            alt="فريق ساز آيديا أثناء تلميع سيارة"
+            className="w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
+          />
+          <div
+            className="animate-float absolute -bottom-2 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900"
+            style={{ animationDelay: '0.3s' }}
+          >
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
               <HiOutlineShieldCheck className="h-6 w-6" />
             </span>
             <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
           </div>
-          <div className="absolute top-4 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900">
+          <div
+            className="animate-float absolute top-8 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900"
+          >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
               <HiOutlineSquares2X2 className="h-5 w-5" />
             </span>
