@@ -6,8 +6,8 @@
  * Leave an entry `null` to keep the placeholder artwork for that service.
  */
 export const SERVICE_IMAGES: (string | null)[] = [
-  null,
-  null,
+  '/images/services/nano-ceramic-exterior.jpg',
+  '/images/services/thermal-insulation.jpg',
   '/images/services/ppf.jpg',
   null,
   '/images/services/exterior-polish.jpg',
