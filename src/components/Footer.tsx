@@ -24,10 +24,7 @@ export default function Footer() {
               {[
                 { Icon: FaInstagram, href: INSTAGRAM_PROFILE_URL },
                 { Icon: FaWhatsapp, href: WHATSAPP_URL },
-                {
-                  Icon: FaSnapchatGhost,
-                  href: 'https://profile.snapchat.com/e4159b79-a30a-4ee9-87d5-3596046ebcb2/profiles/00d5733c-e707-4c97-b073-5cc1f514be98/details/public-stories',
-                },
+                { Icon: FaSnapchatGhost, href: 'https://snapchat.com/t/NA4wGugx' },
                 { Icon: FaTiktok, href: 'https://www.tiktok.com/' },
               ].map(({ Icon, href }, i) => (
                 <a
