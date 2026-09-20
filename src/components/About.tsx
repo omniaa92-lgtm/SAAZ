@@ -32,12 +32,14 @@ export default function About() {
         </div>
 
         <div className="lg:col-span-3">
-          <span className="eyebrow">{t('about.eyebrow')}</span>
-          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('about.title')}</h2>
-          <div className="mt-5 space-y-3 text-slate-600 dark:text-slate-400">
-            {paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+          <div className="text-center lg:text-start">
+            <span className="eyebrow">{t('about.eyebrow')}</span>
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('about.title')}</h2>
+            <div className="mt-5 space-y-3 text-slate-600 dark:text-slate-400">
+              {paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
           </div>
 
           <ul className="mt-8 grid gap-5 sm:grid-cols-2">
