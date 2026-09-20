@@ -20,8 +20,25 @@ export default function InstagramReels() {
 
   const sectionRef = useRef<HTMLElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [duration, setDuration] = useState(60)
   const [paused, setPaused] = useState(false)
+
+  // A tap pauses the marquee so the user can watch a reel in place. There is
+  // no reliable "video finished" signal from the embedded iframe, so resume
+  // automatically after a while of no further taps — otherwise, on mobile
+  // (no hover to un-pause), the strip stays frozen forever once a video ends.
+  const pauseWithAutoResume = () => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
+    setPaused(true)
+    resumeTimerRef.current = setTimeout(() => setPaused(false), 20000)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
+    }
+  }, [])
 
   // Duplicate the list so the marquee loops seamlessly (translateX(-50%) = exactly one set).
   const track = INSTAGRAM_REELS.length > 0 ? [...INSTAGRAM_REELS, ...INSTAGRAM_REELS] : []
@@ -46,7 +63,10 @@ export default function InstagramReels() {
     const el = sectionRef.current
     if (!el) return
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) setPaused(false)
+      if (!entry.isIntersecting) {
+        if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current)
+        setPaused(false)
+      }
     })
     observer.observe(el)
     return () => observer.disconnect()
@@ -84,8 +104,8 @@ export default function InstagramReels() {
             style={{ animationDuration: `${duration}s`, animationPlayState: paused ? 'paused' : 'running' }}
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
-            onTouchStart={() => setPaused(true)}
-            onPointerDown={() => setPaused(true)}
+            onTouchStart={pauseWithAutoResume}
+            onPointerDown={pauseWithAutoResume}
           >
             {track.map((url, i) => (
               <div
