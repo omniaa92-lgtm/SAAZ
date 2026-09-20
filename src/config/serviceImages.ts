@@ -10,6 +10,6 @@ export const SERVICE_IMAGES: (string | null)[] = [
   null,
   '/images/services/ppf.jpg',
   null,
-  null,
+  '/images/services/exterior-polish.jpg',
   null,
 ]
