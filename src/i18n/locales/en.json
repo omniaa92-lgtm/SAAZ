@@ -47,9 +47,9 @@
     "title": "Our Services",
     "subtitle": "We offer a full range of professional services to care for your car",
     "list": [
+      { "title": "PPF Paint Protection Film", "desc": "Professional protection for your car's paint against scratches and external factors using high-quality transparent film that preserves the car's look and value." },
       { "title": "Exterior Nano Ceramic Coating", "desc": "An advanced protective layer applied to your car's paint for extra protection against dust and weather, while enhancing the paint's shine." },
       { "title": "Thermal Insulation", "desc": "Reduces heat inside the car and blocks harmful rays to improve driving comfort and protect the interior from sun damage." },
-      { "title": "PPF Paint Protection Film", "desc": "Professional protection for your car's paint against scratches and external factors using high-quality transparent film that preserves the car's look and value." },
       { "title": "Interior Cleaning & Polishing", "desc": "Thorough cleaning of seats, floors, and interior surfaces to restore freshness and maintain the quality of the car's interior components." },
       { "title": "Exterior Polishing", "desc": "Restores paint shine and removes usage marks and surface scratches for a brighter, more attractive look." },
       { "title": "Interior Nano Ceramic Coating", "desc": "An advanced protective layer for interior surfaces that resists stains and dirt, keeping the cabin clean and fresh for longer." }

@@ -19,14 +19,14 @@ function HeroVisual({ className = '' }: { className?: string }) {
         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
           <HiOutlineShieldCheck className="h-6 w-6" />
         </span>
-        <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
+        <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.0.title')}</p>
       </div>
       <div className="animate-float absolute -top-6 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900">
         <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
           <HiOutlineSquares2X2 className="h-5 w-5" />
         </span>
         <span className="pe-1 text-xs font-semibold text-primary-900 dark:text-slate-100">
-          {t('services.list.0.title')}
+          {t('services.list.1.title')}
         </span>
       </div>
     </div>
