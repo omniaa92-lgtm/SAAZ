@@ -11,5 +11,5 @@ export const SERVICE_IMAGES: (string | null)[] = [
   '/images/services/ppf.jpg',
   '/images/services/interior-cleaning.jpg',
   '/images/services/exterior-polish.jpg',
-  null,
+  '/images/services/nano-ceramic-interior.jpg',
 ]
