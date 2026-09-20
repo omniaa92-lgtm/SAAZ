@@ -38,4 +38,46 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     timeAgo: 'منذ شهر',
   },
+  {
+    name: 'ABDULAZIZ AZ',
+    text: 'من افضل انواع التلميع والتنجيد والنظافة وامانه وعمالة مبدعين بماتعنيه كلمة إبداع، شكراً لهم والله يبارك لهم.',
+    rating: 5,
+    timeAgo: 'منذ سنة',
+  },
+  {
+    name: 'عماد اللحياني',
+    text: 'مبسوط اني سويت عندهم لانه النتيجة كانت مرضية والجودة رائعة في مقابل السعر والشغل نظيف جدا 👍🏽',
+    rating: 5,
+    timeAgo: 'منذ 4 أشهر',
+  },
+  {
+    name: 'Ayman Fahad',
+    text: 'حابب أشكر خاص للأخ محمد العولقي على اخلاقه العاليه و الاهتمام و اصلاحه لجميع الملاحظات .. النتيجه ممتازه ما شاء الله شغل من أجمل ما يكون و ماهي آخر مره أتعامل مع المحل بإذن الله',
+    rating: 5,
+    timeAgo: 'منذ سنة',
+  },
+  {
+    name: 'mohammed rahbini',
+    text: 'خدمة ممتازة و جودة عالية و تعامل راقي ... انصح و بشدة في تسليم سيارتكم في إيدي امينه',
+    rating: 5,
+    timeAgo: 'منذ 7 أشهر',
+  },
+  {
+    name: 'عوض سالم',
+    text: 'افضل مركز عناية للسيارات في جده من تعاملهم الراقي واهتمام بالعملاء والشكر خاص للسيد سلطان ياخي مبدعين تسلم سيارتك وانت مطمئن خدمة ممتازة و جودة عالية و تعامل راقي ... انصح و بشدة في تسليم سيارتكم في إيدي امينه',
+    rating: 5,
+    timeAgo: 'منذ 5 أشهر',
+  },
+  {
+    name: 'onlyme',
+    text: 'مركز ساز ايديا اشكركم على شغلكم الممتاز المحترف صاحب المركز رجل خلوق ومتعاون ومهتم جداً ما شاء الله من الاتقان الي عندهم كنت اعتقد ان السياره مرشوشه بويه وهي طلعت ملبسه بي بي اف الله يبارك لهم',
+    rating: 5,
+    timeAgo: 'منذ شهر',
+  },
+  {
+    name: 'Haitham Sayed',
+    text: 'Honestly, top best experience, they take a very detailed care of the car, very professional and clean. They are honest, kind and hard working. Price wise, average and competitive and affordable. Trust your cars with them. And i advice to go with them.',
+    rating: 5,
+    timeAgo: '4 months ago',
+  },
 ]
