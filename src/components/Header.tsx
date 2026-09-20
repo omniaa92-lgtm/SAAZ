@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
-import { HiOutlineMenu, HiOutlineX, HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
+import { HiOutlineMenu, HiOutlineX, HiOutlineMoon, HiOutlineSun, HiOutlinePhone } from 'react-icons/hi'
 import { useTheme } from '../context/ThemeContext'
-import { WHATSAPP_URL } from '../config/contact'
+import { WHATSAPP_URL, PHONE_TEL, PHONE_DISPLAY } from '../config/contact'
 import Logo from './Logo'
 
 const NAV_KEYS = ['home', 'about', 'services', 'offers', 'whyUs', 'testimonials'] as const
@@ -74,6 +74,14 @@ export default function Header() {
           >
             {theme === 'dark' ? <HiOutlineSun className="h-5 w-5" /> : <HiOutlineMoon className="h-5 w-5" />}
           </button>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            dir="ltr"
+            className="flex items-center gap-2 rounded-full border border-primary-200 px-4 py-1.5 text-sm font-semibold text-primary-700 transition hover:border-accent-500 hover:text-accent-700 dark:border-white/15 dark:text-slate-300 dark:hover:border-accent-400 dark:hover:text-accent-400"
+          >
+            {PHONE_DISPLAY}
+            <HiOutlinePhone className="h-4 w-4" />
+          </a>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
             {t('nav.booking')}
           </a>
