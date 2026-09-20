@@ -51,8 +51,8 @@ export default function Booking() {
     return (
       <section id="booking" className="section-y">
         <div className="container-x">
-          <div className="mx-auto flex max-w-lg flex-col items-center rounded-3xl border border-accent-500/30 bg-accent-400/10 p-10 text-center dark:border-accent-400/20 dark:bg-accent-400/5">
-            <HiOutlineCheckCircle className="h-14 w-14 text-accent-600 dark:text-accent-400" />
+          <div className="mx-auto flex max-w-lg flex-col items-center rounded-3xl border border-emerald-500/30 bg-emerald-50 p-10 text-center dark:border-emerald-400/20 dark:bg-emerald-400/5">
+            <HiOutlineCheckCircle className="h-14 w-14 text-emerald-600 dark:text-emerald-400" />
             <h3 className="mt-4 text-xl font-bold">{t('booking.form.successTitle')}</h3>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{t('booking.form.successBody')}</p>
             <button onClick={() => setStatus('idle')} className="btn-outline mt-6">
