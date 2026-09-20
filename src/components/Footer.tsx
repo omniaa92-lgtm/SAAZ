@@ -133,6 +133,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} SAAZ IDEA — {t('footer.rights')}
           </p>
+          <p dir="ltr">Developed by: Plan Studio</p>
         </div>
       </div>
     </footer>
