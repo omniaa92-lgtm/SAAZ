@@ -1,6 +1,37 @@
 import { useTranslation } from 'react-i18next'
 import { HiOutlineSparkles } from 'react-icons/hi'
 import { HiOutlineShieldCheck, HiOutlineSquares2X2 } from 'react-icons/hi2'
+import { WHATSAPP_URL } from '../config/contact'
+
+function HeroVisual({ className = '' }: { className?: string }) {
+  const { t } = useTranslation()
+  return (
+    <div className={`animate-fade-in relative ${className}`}>
+      <img
+        src="/images/hero-detailing.webp"
+        alt="فريق ساز آيديا أثناء تلميع سيارة"
+        className="w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
+      />
+      <div
+        className="animate-float absolute -bottom-2 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900"
+        style={{ animationDelay: '0.3s' }}
+      >
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
+          <HiOutlineShieldCheck className="h-6 w-6" />
+        </span>
+        <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
+      </div>
+      <div className="animate-float absolute -top-6 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
+          <HiOutlineSquares2X2 className="h-5 w-5" />
+        </span>
+        <span className="pe-1 text-xs font-semibold text-primary-900 dark:text-slate-100">
+          {t('services.list.0.title')}
+        </span>
+      </div>
+    </div>
+  )
+}
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -29,10 +60,19 @@ export default function Hero() {
           <h1 className="mt-5 text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             {t('hero.title')}
           </h1>
+          <HeroVisual className="mt-8 lg:hidden" />
           <p className="mx-auto mt-6 max-w-xl text-lg text-slate-600 lg:mx-0 dark:text-slate-400">
             {t('hero.subtitle')}
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+          <div className="mt-8 flex justify-center gap-3 sm:hidden">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary flex-1">
+              {t('hero.ctaPrimary')}
+            </a>
+            <a href="#booking" className="btn-outline flex-1">
+              {t('finalCta.button')}
+            </a>
+          </div>
+          <div className="mt-8 hidden justify-center gap-3 sm:flex lg:justify-start">
             <a href="#booking" className="btn-primary">
               {t('hero.ctaPrimary')}
             </a>
@@ -52,32 +92,7 @@ export default function Hero() {
           </dl>
         </div>
 
-        <div className="animate-fade-in relative mt-4 lg:mt-0 lg:-mx-10 lg:w-[calc(100%+5rem)]">
-          <img
-            src="/images/hero-detailing.webp"
-            alt="فريق ساز آيديا أثناء تلميع سيارة"
-            className="w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
-          />
-          <div
-            className="animate-float absolute -bottom-2 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900"
-            style={{ animationDelay: '0.3s' }}
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
-              <HiOutlineShieldCheck className="h-6 w-6" />
-            </span>
-            <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.2.title')}</p>
-          </div>
-          <div
-            className="animate-float absolute -top-6 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
-              <HiOutlineSquares2X2 className="h-5 w-5" />
-            </span>
-            <span className="pe-1 text-xs font-semibold text-primary-900 dark:text-slate-100">
-              {t('services.list.0.title')}
-            </span>
-          </div>
-        </div>
+        <HeroVisual className="hidden lg:-mx-10 lg:block lg:w-[calc(100%+5rem)]" />
       </div>
     </section>
   )
