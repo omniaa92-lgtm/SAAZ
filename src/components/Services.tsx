@@ -8,6 +8,7 @@ import {
   HiOutlineHomeModern,
 } from 'react-icons/hi2'
 import ImagePlaceholder from './ImagePlaceholder'
+import { SERVICE_IMAGES } from '../config/serviceImages'
 
 const ICONS = [
   HiOutlineSquares2X2,
@@ -39,12 +40,17 @@ export default function Services() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((item, i) => {
             const Icon = ICONS[i % ICONS.length]
+            const image = SERVICE_IMAGES[i]
             return (
               <div
                 key={item.title}
                 className="overflow-hidden rounded-2xl border border-primary-100/70 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-primary-900"
               >
-                <ImagePlaceholder icon={Icon} variant={(i % 4) as 0 | 1 | 2 | 3} className="h-44 w-full" />
+                {image ? (
+                  <img src={image} alt={item.title} className="h-44 w-full object-cover" />
+                ) : (
+                  <ImagePlaceholder icon={Icon} variant={(i % 4) as 0 | 1 | 2 | 3} className="h-44 w-full" />
+                )}
                 <div className="p-6">
                   <h3 className="text-lg font-bold">{item.title}</h3>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
