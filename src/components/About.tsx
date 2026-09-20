@@ -13,8 +13,8 @@ export default function About() {
 
   return (
     <section id="about" className="section-y">
-      <div className="container-x grid items-center gap-14 lg:grid-cols-2">
-        <div className="relative">
+      <div className="container-x grid items-center gap-14 lg:grid-cols-5">
+        <div className="relative mx-auto w-full max-w-sm lg:col-span-2">
           <img
             src="/images/about-showroom.jpg"
             alt="معرض ساز آيديا"
@@ -31,7 +31,7 @@ export default function About() {
           </div>
         </div>
 
-        <div>
+        <div className="lg:col-span-3">
           <span className="eyebrow">{t('about.eyebrow')}</span>
           <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('about.title')}</h2>
           <div className="mt-5 space-y-3 text-slate-600 dark:text-slate-400">
@@ -40,13 +40,16 @@ export default function About() {
             ))}
           </div>
 
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2">
             {points.map((p) => (
-              <li key={p.title} className="flex items-start gap-3">
+              <li
+                key={p.title}
+                className="flex items-start gap-3 rounded-2xl border border-primary-100/70 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-primary-900"
+              >
                 <HiOutlineCheckCircle className="mt-0.5 h-6 w-6 shrink-0 text-accent-600 dark:text-accent-400" />
                 <div>
                   <p className="font-semibold text-primary-950 dark:text-white">{p.title}</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{p.desc}</p>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{p.desc}</p>
                 </div>
               </li>
             ))}
