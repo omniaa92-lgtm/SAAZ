@@ -9,7 +9,7 @@ export const SERVICE_IMAGES: (string | null)[] = [
   '/images/services/nano-ceramic-exterior.jpg',
   '/images/services/thermal-insulation.jpg',
   '/images/services/ppf.jpg',
-  null,
+  '/images/services/interior-cleaning.jpg',
   '/images/services/exterior-polish.jpg',
   null,
 ]
