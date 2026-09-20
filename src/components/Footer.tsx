@@ -58,7 +58,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="hidden lg:block">
             <h4 className="inline-block border-b-2 border-accent-500 pb-1.5 text-sm font-bold text-primary-950 dark:text-white">
               {t('footer.servicesTitle')}
             </h4>
