@@ -44,9 +44,9 @@ export default function App() {
         <Testimonials />
         {/* <Portfolio /> hidden temporarily */}
         <InstagramReels />
+        <FinalCta />
         <Location />
         <Booking />
-        <FinalCta />
       </main>
       <Footer />
       <NationalDayPopup />
