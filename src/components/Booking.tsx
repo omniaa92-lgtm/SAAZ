@@ -111,8 +111,8 @@ export default function Booking() {
                 className="input"
               />
             </Field>
-            <Field label={t('booking.form.date')}>
-              <input type="date" name="preferred_date" className="input" />
+            <Field label={t('booking.form.date')} className="min-w-0">
+              <input type="date" name="preferred_date" className="input w-full min-w-0" />
             </Field>
             <Field label={t('booking.form.service')} className="sm:col-span-2" required>
               <select name="service" required defaultValue="" className="input">
