@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import type { TFunction } from 'i18next'
 import { HiOutlineMenu, HiOutlineX, HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 import { useTheme } from '../context/ThemeContext'
+import { WHATSAPP_URL } from '../config/contact'
 import Logo from './Logo'
 
 const NAV_KEYS = ['home', 'about', 'services', 'offers', 'whyUs', 'testimonials'] as const
@@ -73,7 +74,7 @@ export default function Header() {
           >
             {theme === 'dark' ? <HiOutlineSun className="h-5 w-5" /> : <HiOutlineMoon className="h-5 w-5" />}
           </button>
-          <a href="#booking" className="btn-primary">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
             {t('nav.booking')}
           </a>
         </div>
@@ -108,7 +109,13 @@ export default function Header() {
             >
               {i18n.language === 'ar' ? t('common.switchToEnglish') : t('common.switchToArabic')}
             </button>
-            <a href="#booking" onClick={() => setOpen(false)} className="btn-primary flex-1">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="btn-primary flex-1"
+            >
               {t('nav.booking')}
             </a>
           </div>
