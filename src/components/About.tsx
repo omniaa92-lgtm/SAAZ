@@ -20,13 +20,13 @@ export default function About() {
             alt="معرض ساز آيديا"
             className="aspect-[4/5] w-full rounded-3xl object-cover shadow-xl shadow-primary-950/15 ring-1 ring-accent-400/30"
           />
-          <div className="animate-float absolute -bottom-6 -end-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
-              <HiOutlineShieldCheck className="h-6 w-6" />
+          <div className="animate-float absolute -bottom-3 -end-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-2 shadow-xl sm:-bottom-6 sm:-end-6 sm:gap-3 sm:p-4 dark:border-white/10 dark:bg-primary-900">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 sm:h-11 sm:w-11 dark:text-accent-400">
+              <HiOutlineShieldCheck className="h-4 w-4 sm:h-6 sm:w-6" />
             </span>
             <div>
-              <p className="text-sm font-extrabold text-primary-900 dark:text-white">5+</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">{t('hero.stats.team')}</p>
+              <p className="text-xs font-extrabold text-primary-900 sm:text-sm dark:text-white">5+</p>
+              <p className="text-[10px] text-slate-500 sm:text-xs dark:text-slate-400">{t('hero.stats.team')}</p>
             </div>
           </div>
         </div>

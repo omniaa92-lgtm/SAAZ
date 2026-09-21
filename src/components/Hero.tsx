@@ -54,19 +54,21 @@ function HeroVisual({ className = '' }: { className?: string }) {
         className="w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
       />
       <div
-        className="animate-float absolute -bottom-2 -start-6 hidden items-center gap-3 rounded-2xl border border-primary-100 bg-white p-4 shadow-xl sm:flex dark:border-white/10 dark:bg-primary-900"
+        className="animate-float absolute -bottom-2 -start-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-2 shadow-xl sm:-start-6 sm:gap-3 sm:p-4 dark:border-white/10 dark:bg-primary-900"
         style={{ animationDelay: '0.3s' }}
       >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
-          <HiOutlineShieldCheck className="h-6 w-6" />
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 sm:h-11 sm:w-11 dark:text-accent-400">
+          <HiOutlineShieldCheck className="h-4 w-4 sm:h-6 sm:w-6" />
         </span>
-        <p className="text-xs font-semibold text-primary-900 dark:text-slate-100">{t('services.list.0.title')}</p>
+        <p className="max-w-[6rem] text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
+          {t('services.list.0.title')}
+        </p>
       </div>
-      <div className="animate-float absolute -top-6 -end-4 hidden rounded-2xl border border-primary-100 bg-white p-3 shadow-xl sm:flex sm:items-center sm:gap-3 dark:border-white/10 dark:bg-primary-900">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 dark:text-accent-400">
-          <HiOutlineSquares2X2 className="h-5 w-5" />
+      <div className="animate-float absolute -top-3 -end-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-1.5 shadow-xl sm:-top-6 sm:-end-4 sm:gap-3 sm:p-3 dark:border-white/10 dark:bg-primary-900">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 sm:h-10 sm:w-10 dark:text-accent-400">
+          <HiOutlineSquares2X2 className="h-4 w-4 sm:h-5 sm:w-5" />
         </span>
-        <span className="pe-1 text-xs font-semibold text-primary-900 dark:text-slate-100">
+        <span className="max-w-[6rem] pe-1 text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
           {t('services.list.1.title')}
         </span>
       </div>
