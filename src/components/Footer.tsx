@@ -130,7 +130,17 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} SAAZ IDEA — {t('footer.rights')}
           </p>
-          <p dir="ltr">Developed by Omnia A.</p>
+          <p dir="ltr">
+            Developed By:{' '}
+            <a
+              href="https://salla.sa/plan-sa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent-400"
+            >
+              Plan
+            </a>
+          </p>
         </div>
       </div>
     </footer>
