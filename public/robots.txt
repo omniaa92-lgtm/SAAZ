@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saaz-pi.vercel.app/sitemap.xml
+Sitemap: https://saazidea.com/sitemap.xml
