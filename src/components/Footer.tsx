@@ -48,7 +48,7 @@ export default function Footer() {
               {NAV_KEYS.map((key) => (
                 <li key={key}>
                   <a
-                    href={`#${key}`}
+                    href={`/#${key}`}
                     className="text-sm text-slate-500 transition hover:text-accent-600 dark:text-slate-400 dark:hover:text-accent-400"
                   >
                     {t(`nav.${key}`)}
@@ -57,7 +57,7 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="/partners.html"
+                  href="/partners"
                   className="text-sm text-slate-500 transition hover:text-accent-600 dark:text-slate-400 dark:hover:text-accent-400"
                 >
                   {t('footer.partnersLink')}

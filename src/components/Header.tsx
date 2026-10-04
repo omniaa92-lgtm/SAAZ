@@ -14,7 +14,7 @@ function NavLinks({ t, onClick }: { t: TFunction; onClick?: () => void }) {
       {NAV_KEYS.map((key) => (
         <a
           key={key}
-          href={`#${key}`}
+          href={`/#${key}`}
           onClick={onClick}
           className="text-sm font-medium text-slate-600 transition-colors hover:text-accent-600 dark:text-slate-300 dark:hover:text-accent-400"
         >
@@ -52,7 +52,7 @@ export default function Header() {
       }`}
     >
       <div className="container-x flex items-center justify-between py-3">
-        <a href="#home">
+        <a href="/">
           <Logo className="h-24" />
         </a>
 

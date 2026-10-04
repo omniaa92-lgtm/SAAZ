@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -16,24 +17,41 @@ import Booking from './components/Booking'
 import FinalCta from './components/FinalCta'
 import Footer from './components/Footer'
 import NationalDayPopup from './components/NationalDayPopup'
+import PartnersPage from './pages/PartnersPage'
 
 function DocumentLangSync() {
   const { i18n, t } = useTranslation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     document.documentElement.lang = i18n.language
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
-    document.title = t('meta.title')
-  }, [i18n.language, t])
+    document.title = pathname === '/partners' ? t('partners.meta.title') : t('meta.title')
+  }, [i18n.language, t, pathname])
 
   return null
 }
 
-export default function App() {
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        el.scrollIntoView({ behavior: 'auto' })
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+
+  return null
+}
+
+function HomePage() {
   return (
-    <ThemeProvider>
-      <DocumentLangSync />
-      <Header />
+    <>
       <main>
         <Hero />
         <About />
@@ -48,8 +66,24 @@ export default function App() {
         <Location />
         <Booking />
       </main>
-      <Footer />
       <NationalDayPopup />
-    </ThemeProvider>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ThemeProvider>
+        <DocumentLangSync />
+        <ScrollManager />
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/partners" element={<PartnersPage />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }

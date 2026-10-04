@@ -173,7 +173,7 @@
       "Car Color Change (Wrap)"
     ],
     "quickLinks": "Links",
-    "partnersLink": "Marketing Partners",
+    "partnersLink": "Affiliate Marketing",
     "contact": "Contact",
     "email": "sales@saazidea.com",
     "phone": "+966 54 330 0037",
@@ -187,5 +187,132 @@
     "toggleTheme": "Toggle light/dark mode",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "partners": {
+    "meta": {
+      "title": "Marketing Partners | SAAZ IDEA",
+      "description": "Join the SAAZ IDEA marketing partners program — promote our car care and protection services and earn a clear commission on every customer you bring."
+    },
+    "hero": {
+      "eyebrow": "An opportunity for marketers and relationship builders",
+      "title": "Promote SAAZ IDEA and earn from every customer you bring us",
+      "subtitle": "Join the SAAZ IDEA marketing partners program and help bring car care and protection services to customers in Jeddah, in exchange for a clear commission on every completed booking.",
+      "ctaPrimary": "Apply to Join",
+      "ctaSecondary": "See how the program works",
+      "chips": ["Your own code & link", "Ready-made marketing materials", "Clear commission per booking"]
+    },
+    "tools": {
+      "eyebrow": "What do you get?",
+      "title": "Tools that help you focus on marketing",
+      "subtitle": "We provide everything you need to present our services correctly and professionally.",
+      "items": [
+        { "title": "Your own code & link", "desc": "A unique, easy-to-share link that automatically documents every customer you refer." },
+        { "title": "Approved marketing materials", "desc": "Ready-made images and copy that help you present our offers clearly and professionally." },
+        { "title": "Services you can trust", "desc": "A real center in Jeddah with professional services (PPF, nano ceramic, thermal insulation, polishing)." },
+        { "title": "Clear tracking", "desc": "We let you know the status of every customer from your link after we follow up and process their request." },
+        { "title": "Transaction documentation", "desc": "Every request tied to your code is logged and reviewed before the commission is approved." },
+        { "title": "Direct support", "desc": "Reach us on WhatsApp whenever you need help with bookings or commission questions." }
+      ]
+    },
+    "tracks": {
+      "eyebrow": "What will you promote?",
+      "title": "Two tracks open up varied opportunities",
+      "subtitle": "Whether your audience is car owners or you have relationships with companies and agencies, the program gives you a real opportunity to present with confidence.",
+      "items": [
+        {
+          "num": "01",
+          "title": "Car Owners",
+          "desc": "Share our services with people around you who care about protecting and maintaining their cars.",
+          "points": ["PPF protection film & nano ceramic", "Thermal insulation & professional polishing", "Packages and offers with clear pricing"]
+        },
+        {
+          "num": "02",
+          "title": "Companies & Car Agencies",
+          "desc": "If you have relationships with car showrooms, rental companies, or vehicle fleets, we offer bulk care solutions.",
+          "points": ["Preparing showroom cars before display", "Recurring care contracts for fleets", "Direct coordination with our team for every request"]
+        }
+      ]
+    },
+    "how": {
+      "eyebrow": "How does the program work?",
+      "title": "From application to earning your commission",
+      "subtitle": "A simple, clear path that protects the partner's rights and gives the customer a natural booking experience on our site.",
+      "steps": [
+        { "title": "Apply", "desc": "Share your information and marketing channels through the application form below." },
+        { "title": "Get your code", "desc": "After acceptance, we send you a link and code of your own along with approved marketing materials." },
+        { "title": "Share the opportunity", "desc": "Share your link with your audience via WhatsApp, Instagram, or any channel that suits you." },
+        { "title": "Earn your commission", "desc": "After the booking value is collected and the transaction approved, your commission is calculated per the program terms." }
+      ]
+    },
+    "commission": {
+      "eyebrow": "Clear commission",
+      "title": "10% after VAT and total execution costs",
+      "desc": "After the service value is collected, VAT is excluded and total execution costs are deducted, then the marketing partner receives 10% of the remaining amount.",
+      "calcLabel": "How the commission is calculated",
+      "rows": ["Collect the service or booking value", "Exclude value-added tax", "Deduct total execution costs"],
+      "finalRow": "Calculate the marketing partner's commission from the remaining amount",
+      "note": "The commission is approved once collection is complete and the actual costs of the transaction are finalized."
+    },
+    "rules": {
+      "title": "Basis of a professional partnership",
+      "subtitle": "We protect SAAZ IDEA's reputation and the rights of the partner and the customer through clear rules.",
+      "items": [
+        "Use only materials and information approved by SAAZ IDEA.",
+        "Do not offer discounts or promises that are not authorized.",
+        "Commission is calculated after the amount is collected and the transaction is approved.",
+        "Cancelled or refunded transactions are not counted.",
+        "Keep customer data confidential."
+      ]
+    },
+    "who": {
+      "eyebrow": "Who is this program for?",
+      "title": "For those who know how to reach the right person and build trust",
+      "subtitle": "A large follower count isn't required — we care about the quality of your relationships and clarity of communication.",
+      "items": [
+        { "title": "Car enthusiasts", "desc": "Content creators or people interested in cars and car care." },
+        { "title": "Affiliate marketers", "desc": "Those experienced with referral codes and marketing links for services or products." },
+        { "title": "Showroom & car service owners", "desc": "Those with business relationships with car owners or fleet companies." },
+        { "title": "Well-connected individuals", "desc": "Those who reach an audience that trusts them and cares about their cars." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "What you need to know before applying",
+      "items": [
+        { "q": "Do I need previous marketing experience?", "a": "Experience is helpful but not required. We care about your ability to communicate clearly and reach an audience interested in car care." },
+        { "q": "How do I get my own marketing link?", "a": "After your application is accepted, we send you a code and a link of your own via WhatsApp or the email you registered." },
+        { "q": "When does the commission become due?", "a": "The commission is calculated after the booking value is fully collected and the transaction is approved by our team, per the program terms." },
+        { "q": "How is the 10% calculated?", "a": "10% of the booking value after excluding VAT and deducting the actual total execution costs." },
+        { "q": "Are there any fees to join?", "a": "No, joining the program is completely free." }
+      ]
+    },
+    "apply": {
+      "eyebrow": "Start your partnership with SAAZ IDEA",
+      "title": "Apply and get your own code after acceptance.",
+      "points": ["A short application", "Review and approval by the SAAZ IDEA team", "A code, link, and marketing materials after acceptance"],
+      "whatsapp": "Ask us on WhatsApp",
+      "form": {
+        "title": "Marketing Partner Application",
+        "subtitle": "Fill out the details below, and our team will review your application and contact you with the result.",
+        "name": "Full Name",
+        "namePlaceholder": "Enter your name",
+        "phone": "Phone Number",
+        "phonePlaceholder": "05xxxxxxxx",
+        "phoneHint": "Please enter a 10-digit phone number",
+        "email": "Email Address",
+        "emailPlaceholder": "example@email.com",
+        "channel": "Your Marketing Channels",
+        "channelOptions": ["Instagram", "Snapchat", "TikTok", "WhatsApp / Personal relationships", "Car showroom / company", "Other"],
+        "message": "About your audience or experience (optional)",
+        "messagePlaceholder": "e.g. followers interested in cars, or relationships with showroom owners...",
+        "submit": "Send Application",
+        "submitting": "Sending…",
+        "successTitle": "Your application was received!",
+        "successBody": "Our team will reach out to you soon to review your application.",
+        "errorTitle": "Something Went Wrong",
+        "errorBody": "We couldn't send your request. Please try again or contact us on WhatsApp.",
+        "newRequest": "Send Another Request"
+      }
+    }
   }
 }
