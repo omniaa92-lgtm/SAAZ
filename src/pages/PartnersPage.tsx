@@ -172,14 +172,9 @@ export default function PartnersPage() {
               const Icon = TRACK_ICONS[i % TRACK_ICONS.length]
               return (
                 <div key={track.title} className="card p-7">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-400/10 text-accent-600 dark:text-accent-400">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span className="rounded-full bg-accent-400/10 px-3 py-1 text-xs font-bold text-accent-700 dark:text-accent-400">
-                      {track.num}
-                    </span>
-                  </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-400/10 text-accent-600 dark:text-accent-400">
+                    <Icon className="h-5 w-5" />
+                  </span>
                   <h3 className="mt-4 text-lg font-extrabold text-primary-950 dark:text-white">{track.title}</h3>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{track.desc}</p>
                   <ul className="mt-4 space-y-2">
