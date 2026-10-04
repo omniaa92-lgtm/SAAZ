@@ -198,7 +198,7 @@ export default function PartnersPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
               <div key={step.title} className="card p-6">
-                <span className="text-4xl font-black text-accent-500 dark:text-accent-400">
+                <span className="text-4xl font-black text-transparent [-webkit-text-stroke:1.5px_#f5b400] dark:[-webkit-text-stroke:1.5px_#ffc21c]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-4 font-bold text-primary-950 dark:text-white">{step.title}</h3>
