@@ -257,16 +257,23 @@ export default function PartnersPage() {
       {/* Rules */}
       <section className="section-y">
         <div className="container-x">
-          <div className="rounded-3xl bg-primary-950 p-8 text-white sm:p-10">
-            <h3 className="text-xl font-extrabold">{t('partners.rules.title')}</h3>
-            <p className="mt-2 text-sm text-slate-400">{t('partners.rules.subtitle')}</p>
-            <ul className="mt-6 space-y-3">
-              {rules.map((rule) => (
-                <li key={rule} className="border-b border-white/10 pb-3 text-sm text-slate-300 last:border-0 last:pb-0">
-                  {rule}
-                </li>
+          <div className="rounded-3xl bg-primary-950 p-8 sm:p-10">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-accent-400/10 px-4 py-1.5 text-xs font-bold tracking-wide text-accent-400 uppercase">
+                {t('partners.rules.title')}
+              </span>
+              <p className="mt-4 text-slate-400">{t('partners.rules.subtitle')}</p>
+            </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {rules.map((rule, i) => (
+                <div key={rule} className="flex items-start gap-3.5 rounded-2xl bg-white/5 p-4 transition hover:bg-white/10">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-xs font-extrabold text-accent-400">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <p className="pt-1 text-sm text-slate-300">{rule}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
