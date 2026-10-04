@@ -271,12 +271,12 @@ export default function PartnersPage() {
 
       {/* FAQ */}
       <section className="section-y">
-        <div className="container-x max-w-3xl">
+        <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">{t('partners.faq.eyebrow')}</span>
             <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('partners.faq.title')}</h2>
           </div>
-          <div className="mt-10 space-y-3">
+          <div className="mx-auto mt-10 max-w-3xl space-y-3">
             {faqs.map((item) => (
               <details
                 key={item.q}
