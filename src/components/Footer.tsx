@@ -55,6 +55,14 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/partners.html"
+                  className="text-sm text-slate-500 transition hover:text-accent-600 dark:text-slate-400 dark:hover:text-accent-400"
+                >
+                  {t('footer.partnersLink')}
+                </a>
+              </li>
             </ul>
           </div>
 
