@@ -7,6 +7,7 @@ import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../config/contact'
 import Logo from './Logo'
 
 const NAV_KEYS = ['home', 'about', 'services', 'offers', 'whyUs', 'testimonials', 'location'] as const
+const MOBILE_NAV_KEYS = ['home', 'services', 'offers', 'testimonials'] as const
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -131,6 +132,20 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        <nav className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-primary-100/70 pt-5 text-xs font-medium text-slate-500 lg:hidden dark:border-white/10 dark:text-slate-400">
+          {MOBILE_NAV_KEYS.map((key) => (
+            <span key={key} className="flex items-center gap-3">
+              <a href={`/#${key}`} className="transition hover:text-accent-600 dark:hover:text-accent-400">
+                {t(`nav.${key}`)}
+              </a>
+              <span className="h-1 w-1 rounded-full bg-slate-300 dark:bg-white/20" />
+            </span>
+          ))}
+          <a href="/partners" className="transition hover:text-accent-600 dark:hover:text-accent-400">
+            {t('footer.partnersLink')}
+          </a>
+        </nav>
       </div>
 
       <div className="bg-primary-950">

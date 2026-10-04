@@ -21,6 +21,13 @@ function NavLinks({ t, onClick }: { t: TFunction; onClick?: () => void }) {
           {t(`nav.${key}`)}
         </a>
       ))}
+      <a
+        href="/partners"
+        onClick={onClick}
+        className="text-sm font-medium text-slate-600 transition-colors hover:text-accent-600 dark:text-slate-300 dark:hover:text-accent-400"
+      >
+        {t('nav.partners')}
+      </a>
     </>
   )
 }
