@@ -183,8 +183,8 @@
     "rights": "All rights reserved"
   },
   "common": {
-    "switchToEnglish": "English",
-    "switchToArabic": "العربية",
+    "switchToEnglish": "EN",
+    "switchToArabic": "AR",
     "toggleTheme": "Toggle light/dark mode",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"

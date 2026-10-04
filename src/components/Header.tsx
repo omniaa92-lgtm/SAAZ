@@ -70,7 +70,8 @@ export default function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <button
             onClick={switchLang}
-            className="rounded-full border border-primary-200 px-3.5 py-1.5 text-xs font-semibold text-primary-700 transition hover:border-accent-500 hover:text-accent-700 dark:border-white/15 dark:text-slate-300 dark:hover:border-accent-400 dark:hover:text-accent-400"
+            aria-label={i18n.language === 'ar' ? t('common.switchToEnglish') : t('common.switchToArabic')}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-primary-200 text-xs font-bold text-primary-700 transition hover:border-accent-500 hover:text-accent-700 dark:border-white/15 dark:text-slate-300 dark:hover:border-accent-400 dark:hover:text-accent-400"
           >
             {i18n.language === 'ar' ? t('common.switchToEnglish') : t('common.switchToArabic')}
           </button>

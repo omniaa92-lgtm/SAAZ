@@ -183,8 +183,8 @@
     "rights": "جميع الحقوق محفوظة"
   },
   "common": {
-    "switchToEnglish": "English",
-    "switchToArabic": "العربية",
+    "switchToEnglish": "EN",
+    "switchToArabic": "AR",
     "toggleTheme": "تبديل الوضع الفاتح/الداكن",
     "openMenu": "فتح القائمة",
     "closeMenu": "إغلاق القائمة"
