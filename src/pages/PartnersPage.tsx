@@ -282,7 +282,7 @@ export default function PartnersPage() {
                 key={item.q}
                 className="group rounded-2xl border border-primary-100/70 bg-white p-5 dark:border-white/10 dark:bg-primary-900"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-primary-950 dark:text-white">
+                <summary className="flex cursor-pointer list-none items-center justify-center gap-3 text-center font-semibold text-primary-950 dark:text-white">
                   {item.q}
                   <span className="shrink-0 text-lg text-accent-600 transition group-open:rotate-45 dark:text-accent-400">
                     +
