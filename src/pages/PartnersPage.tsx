@@ -96,7 +96,13 @@ export default function PartnersPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-primary-700 to-primary-950 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <section
+        className="relative overflow-hidden bg-primary-950 bg-cover bg-center pt-16 pb-20 sm:pt-24 sm:pb-28"
+        style={{
+          backgroundImage:
+            "linear-gradient(to bottom, rgba(12,13,40,0.82), rgba(12,13,40,0.95)), url('/images/about-showroom.jpg')",
+        }}
+      >
         <div className="container-x text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent-400/10 px-4 py-1.5 text-xs font-bold tracking-wide text-accent-400 uppercase">
             {t('partners.hero.eyebrow')}
