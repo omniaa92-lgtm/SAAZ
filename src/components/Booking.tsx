@@ -5,6 +5,7 @@ import {
   HiOutlineExclamationCircle,
   HiOutlineCalendarDays,
 } from 'react-icons/hi2'
+import { getReferralCode } from '../utils/referral'
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined
 const SALES_EMAIL = 'saazidea@gmail.com'
@@ -82,6 +83,7 @@ export default function Booking() {
         >
           <input type="hidden" name="_to" value={SALES_EMAIL} />
           <input type="hidden" name="_subject" value="طلب حجز جديد من موقع SAAZ IDEA" />
+          {getReferralCode() && <input type="hidden" name="referral_code" value={getReferralCode()} />}
 
           <div className="grid gap-5 sm:grid-cols-2">
             <Field label={t('booking.form.name')} required>
