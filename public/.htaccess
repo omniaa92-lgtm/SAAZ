@@ -7,6 +7,13 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
+  # Link-preview bots (WhatsApp, Facebook, Twitter/X, Telegram, ...) don't run
+  # JavaScript, so give them a static page with proper Open Graph tags for
+  # /partners instead of the generic homepage ones. Real visitors are
+  # unaffected and still get the live React app below.
+  RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot|Twitterbot|WhatsApp|TelegramBot|Slackbot|LinkedInBot|Discordbot|SkypeUriPreview|Pinterest|redditbot|vkShare|W3C_Validator) [NC]
+  RewriteRule ^partners/?$ /partners-share.html [L]
+
   # Everything else falls back to index.html so React Router can handle it
   RewriteRule ^ index.html [L]
 </IfModule>
