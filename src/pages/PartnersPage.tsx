@@ -45,10 +45,6 @@ interface StepItem {
   title: string
   desc: string
 }
-interface PersonaItem {
-  title: string
-  desc: string
-}
 interface FaqItem {
   q: string
   a: string
@@ -64,7 +60,6 @@ export default function PartnersPage() {
   const steps = t('partners.how.steps', { returnObjects: true }) as StepItem[]
   const commissionRows = t('partners.commission.rows', { returnObjects: true }) as string[]
   const rules = t('partners.rules.items', { returnObjects: true }) as string[]
-  const personas = t('partners.who.items', { returnObjects: true }) as PersonaItem[]
   const faqs = t('partners.faq.items', { returnObjects: true }) as FaqItem[]
   const applyPoints = t('partners.apply.points', { returnObjects: true }) as string[]
   const channelOptions = t('partners.apply.form.channelOptions', { returnObjects: true }) as string[]
@@ -270,33 +265,6 @@ export default function PartnersPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Who */}
-      <section className="section-y bg-primary-50/40 dark:bg-primary-900/20">
-        <div className="container-x">
-          <div className="mx-auto max-w-2xl text-center">
-            <span className="eyebrow">{t('partners.who.eyebrow')}</span>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('partners.who.title')}</h2>
-            <p className="mt-4 text-slate-600 dark:text-slate-400">{t('partners.who.subtitle')}</p>
-          </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {personas.map((p, i) => (
-              <div
-                key={p.title}
-                className="flex items-center gap-4 rounded-2xl border border-primary-100/70 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-primary-900"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-400/10 text-sm font-extrabold text-accent-700 dark:text-accent-400">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div>
-                  <h4 className="font-bold text-primary-950 dark:text-white">{p.title}</h4>
-                  <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{p.desc}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
