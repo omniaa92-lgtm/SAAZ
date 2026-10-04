@@ -198,10 +198,10 @@ export default function PartnersPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
               <div key={step.title} className="card p-6">
-                <span className="text-sm font-extrabold text-accent-600 dark:text-accent-400">
+                <span className="text-4xl font-black text-accent-500 dark:text-accent-400">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-3 font-bold text-primary-950 dark:text-white">{step.title}</h3>
+                <h3 className="mt-4 font-bold text-primary-950 dark:text-white">{step.title}</h3>
                 <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{step.desc}</p>
               </div>
             ))}
