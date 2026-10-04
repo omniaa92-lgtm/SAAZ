@@ -9,6 +9,7 @@ import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineUserGroup,
   HiOutlineBuildingOffice2,
+  HiOutlineBriefcase,
   HiOutlineCheckCircle,
   HiOutlineExclamationCircle,
 } from 'react-icons/hi2'
@@ -23,7 +24,7 @@ const TOOL_ICONS = [
   HiOutlineClipboardDocumentCheck,
   HiOutlineChatBubbleLeftRight,
 ]
-const TRACK_ICONS = [HiOutlineUserGroup, HiOutlineBuildingOffice2]
+const TRACK_ICONS = [HiOutlineUserGroup, HiOutlineBuildingOffice2, HiOutlineBriefcase]
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined
 const SALES_EMAIL = 'saazidea@gmail.com'
@@ -166,7 +167,7 @@ export default function PartnersPage() {
             <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('partners.tracks.title')}</h2>
             <p className="mt-4 text-slate-600 dark:text-slate-400">{t('partners.tracks.subtitle')}</p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {tracks.map((track, i) => {
               const Icon = TRACK_ICONS[i % TRACK_ICONS.length]
               return (

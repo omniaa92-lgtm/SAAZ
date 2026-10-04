@@ -216,8 +216,8 @@
     },
     "tracks": {
       "eyebrow": "What will you promote?",
-      "title": "Two tracks open up varied opportunities",
-      "subtitle": "Whether your audience is car owners or you have relationships with companies and agencies, the program gives you a real opportunity to present with confidence.",
+      "title": "Three tracks open up varied opportunities",
+      "subtitle": "Whether your audience is car owners, you have relationships with companies and agencies, or you can connect us with your employer to offer discounts to their employees, the program gives you a real opportunity to present with confidence.",
       "items": [
         {
           "num": "01",
@@ -230,6 +230,12 @@
           "title": "Companies & Car Agencies",
           "desc": "If you have relationships with car showrooms, rental companies, or vehicle fleets, we offer bulk care solutions.",
           "points": ["Preparing showroom cars before display", "Recurring care contracts for fleets", "Direct coordination with our team for every request"]
+        },
+        {
+          "num": "03",
+          "title": "Corporate Employee Discounts",
+          "desc": "Connect SAAZ IDEA with your employer or any company you know, and we offer exclusive discounts to their employees on our services.",
+          "points": ["A dedicated discount code for company employees", "Custom offers and packages based on the agreement", "Direct coordination with your HR team or point of contact"]
         }
       ]
     },
