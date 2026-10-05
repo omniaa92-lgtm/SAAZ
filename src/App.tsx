@@ -19,6 +19,11 @@ import Footer from './components/Footer'
 import NationalDayPopup from './components/NationalDayPopup'
 import PartnersPage from './pages/PartnersPage'
 
+function setMeta(selector: string, attr: string, value: string) {
+  const el = document.querySelector(selector)
+  if (el) el.setAttribute(attr, value)
+}
+
 function DocumentLangSync() {
   const { i18n, t } = useTranslation()
   const { pathname } = useLocation()
@@ -26,7 +31,20 @@ function DocumentLangSync() {
   useEffect(() => {
     document.documentElement.lang = i18n.language
     document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr'
-    document.title = pathname === '/partners' ? t('partners.meta.title') : t('meta.title')
+
+    const isPartners = pathname === '/partners'
+    const title = isPartners ? t('partners.meta.title') : t('meta.title')
+    const description = isPartners ? t('partners.meta.description') : t('meta.description')
+    const url = `https://saazidea.com${pathname}`
+
+    document.title = title
+    setMeta('meta[name="description"]', 'content', description)
+    setMeta('link[rel="canonical"]', 'href', url)
+    setMeta('meta[property="og:title"]', 'content', title)
+    setMeta('meta[property="og:description"]', 'content', description)
+    setMeta('meta[property="og:url"]', 'content', url)
+    setMeta('meta[name="twitter:title"]', 'content', title)
+    setMeta('meta[name="twitter:description"]', 'content', description)
   }, [i18n.language, t, pathname])
 
   return null
