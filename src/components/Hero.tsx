@@ -48,10 +48,19 @@ function HeroVisual({ className = '' }: { className?: string }) {
   const { t } = useTranslation()
   return (
     <div className={`animate-fade-in relative ${className}`}>
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.06] dark:opacity-10 dark:brightness-0 dark:invert"
+        style={{
+          backgroundImage: "url('/images/logo.png')",
+          backgroundSize: '64px auto',
+          backgroundRepeat: 'repeat',
+          transform: 'rotate(-12deg) scale(1.4)',
+        }}
+      />
       <img
         src="/images/hero-detailing.webp"
         alt="فريق ساز آيديا أثناء تلميع سيارة"
-        className="w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
+        className="relative w-full drop-shadow-[0_35px_35px_rgba(12,13,40,0.35)]"
       />
       <div
         className="animate-float absolute -bottom-2 -start-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-2 shadow-xl sm:-start-6 sm:gap-3 sm:p-4 dark:border-white/10 dark:bg-primary-900"
