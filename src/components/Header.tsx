@@ -58,9 +58,9 @@ export default function Header() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-x flex items-center justify-between py-3">
+      <div className="container-x flex items-center justify-between py-2">
         <a href="/">
-          <Logo className="h-24" />
+          <Logo className="h-14" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
