@@ -25,7 +25,19 @@ export default function Testimonials() {
     <section id="testimonials" className="section-y bg-gradient-to-br from-accent-400 to-accent-600">
       <div className="container-x">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-primary-950 sm:text-4xl">{t('testimonials.title')}</h2>
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary-950 px-4 py-2 shadow-lg">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, s) => (
+                <svg key={s} viewBox="0 0 20 20" className="h-4 w-4 fill-[#fbbc04]">
+                  <path d="M10 1l2.6 5.61 6.18.6-4.65 4.26 1.32 6.07L10 14.77 4.55 17.54l1.32-6.07L1.22 7.21l6.18-.6z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-sm font-bold text-white">5.0</span>
+            <span className="h-3.5 w-px bg-white/20" />
+            <span className="text-xs font-medium text-slate-300">{t('testimonials.reviewCount')}</span>
+          </div>
+          <h2 className="mt-5 text-3xl font-extrabold text-primary-950 sm:text-4xl">{t('testimonials.title')}</h2>
           <p className="mt-3 text-primary-800/80">{t('testimonials.subtitle')}</p>
           <a
             href={GOOGLE_MAPS_URL}
