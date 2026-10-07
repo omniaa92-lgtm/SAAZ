@@ -60,7 +60,7 @@ export default function Header() {
     >
       <div className="container-x flex items-center justify-between py-2">
         <a href="/">
-          <Logo className="h-14" />
+          <Logo className="h-[73px]" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
