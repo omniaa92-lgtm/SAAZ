@@ -68,12 +68,12 @@ export default function Booking() {
   return (
     <section id="booking" className="section-y bg-primary-50/40 dark:bg-primary-900/20">
       <div className="container-x">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">
             <HiOutlineCalendarDays className="h-4 w-4" />
             {t('booking.eyebrow')}
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">{t('booking.title')}</h2>
+          <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl sm:whitespace-nowrap">{t('booking.title')}</h2>
           <p className="mt-4 text-slate-600 dark:text-slate-400">{t('booking.subtitle')}</p>
         </div>
 
