@@ -6,7 +6,7 @@ import { GOOGLE_MAPS_URL } from '../config/location'
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from '../config/contact'
 import Logo from './Logo'
 
-const NAV_KEYS = ['home', 'about', 'services', 'offers', 'whyUs', 'testimonials', 'location'] as const
+const NAV_KEYS = ['about', 'services', 'offers', 'whyUs', 'testimonials', 'location'] as const
 const MOBILE_NAV_KEYS = ['home', 'services', 'offers', 'testimonials'] as const
 
 export default function Footer() {
