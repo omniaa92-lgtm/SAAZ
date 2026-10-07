@@ -253,12 +253,12 @@
     },
     "commission": {
       "eyebrow": "Clear commission",
-      "title": "10% after VAT and total execution costs",
-      "desc": "After the service value is collected, VAT is excluded and total execution costs are deducted, then the marketing partner receives 10% of the remaining amount.",
+      "title": "A clear commission after VAT and total execution costs",
+      "desc": "After the service value is collected, VAT is excluded and total execution costs are deducted, then the marketing partner receives a clear percentage of the remaining amount, communicated when their application is accepted.",
       "calcLabel": "How the commission is calculated",
       "rows": ["Collect the service or booking value", "Exclude value-added tax", "Deduct total execution costs"],
       "finalRow": "Calculate the marketing partner's commission from the remaining amount",
-      "note": "The commission is approved once collection is complete and the actual costs of the transaction are finalized."
+      "note": "The commission is approved once collection is complete and the actual costs of the transaction are finalized, and is clearly communicated to the partner upon acceptance."
     },
     "rules": {
       "title": "Basis of a professional partnership",
@@ -289,7 +289,7 @@
         { "q": "Do I need previous marketing experience?", "a": "Experience is helpful but not required. We care about your ability to communicate clearly and reach an audience interested in car care." },
         { "q": "How do I get my own marketing link?", "a": "After your application is accepted, we send you a code and a link of your own via WhatsApp or the email you registered." },
         { "q": "When does the commission become due?", "a": "The commission is calculated after the booking value is fully collected and the transaction is approved by our team, per the program terms." },
-        { "q": "How is the 10% calculated?", "a": "10% of the booking value after excluding VAT and deducting the actual total execution costs." },
+        { "q": "How is the commission percentage calculated?", "a": "A clear percentage of the booking value after excluding VAT and deducting the actual total execution costs, communicated to you when your application is accepted." },
         { "q": "Are there any fees to join?", "a": "No, joining the program is completely free." }
       ]
     },

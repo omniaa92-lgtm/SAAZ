@@ -226,9 +226,11 @@ export default function PartnersPage() {
             <p className="mt-4 text-slate-400">{t('partners.commission.desc')}</p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
-            <div className="flex items-baseline justify-between">
-              <span className="text-3xl font-extrabold text-accent-400">10%</span>
-              <span className="text-xs text-slate-400">{t('partners.commission.calcLabel')}</span>
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-400/15 text-accent-400">
+                <HiOutlineChartBar className="h-4.5 w-4.5" />
+              </span>
+              <span className="text-sm font-bold text-white">{t('partners.commission.calcLabel')}</span>
             </div>
             <div className="mt-5 space-y-2.5">
               {commissionRows.map((row, i) => (
@@ -241,9 +243,7 @@ export default function PartnersPage() {
               ))}
               <div className="flex items-center justify-between rounded-xl bg-accent-400/15 px-4 py-3 text-sm font-semibold text-white">
                 <span>{t('partners.commission.finalRow')}</span>
-                <span className="flex h-6 items-center justify-center rounded-full bg-accent-400 px-2 text-xs font-bold text-primary-950">
-                  10%
-                </span>
+                <HiOutlineCheckCircle className="h-5 w-5 shrink-0 text-accent-400" />
               </div>
             </div>
             <p className="mt-4 text-xs text-slate-500">{t('partners.commission.note')}</p>
