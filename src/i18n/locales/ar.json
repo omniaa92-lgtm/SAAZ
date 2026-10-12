@@ -26,6 +26,12 @@
       "clients": "عميل راضٍ",
       "years": "سنوات خبرة",
       "team": "سنوات ضمان معتمد"
+    },
+    "badges": {
+      "ppf": "أفلام حماية الطلاء PPF",
+      "nanoCeramic": "نانو سيراميك",
+      "thermalInsulation": "العازل الحراري",
+      "polishing": "التلميع"
     }
   },
   "about": {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HiOutlineSparkles } from 'react-icons/hi'
-import { HiOutlineShieldCheck, HiOutlineSquares2X2, HiOutlineSun } from 'react-icons/hi2'
+import { HiOutlineShieldCheck, HiOutlineSquares2X2, HiOutlineSun, HiOutlineSparkles as HiOutlineSparkles2 } from 'react-icons/hi2'
 import { WHATSAPP_URL } from '../config/contact'
 
 // Counts up from 0 to `target` once the number scrolls into view, so the
@@ -70,7 +70,7 @@ function HeroVisual({ className = '' }: { className?: string }) {
           <HiOutlineShieldCheck className="h-4 w-4 sm:h-6 sm:w-6" />
         </span>
         <p className="max-w-[6rem] text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
-          {t('services.list.0.title')}
+          {t('hero.badges.ppf')}
         </p>
       </div>
       <div className="animate-float absolute -top-3 -end-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-1.5 shadow-xl sm:-top-6 sm:-end-4 sm:gap-3 sm:p-3 dark:border-white/10 dark:bg-primary-900">
@@ -78,7 +78,7 @@ function HeroVisual({ className = '' }: { className?: string }) {
           <HiOutlineSquares2X2 className="h-4 w-4 sm:h-5 sm:w-5" />
         </span>
         <span className="max-w-[6rem] pe-1 text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
-          {t('services.list.1.title')}
+          {t('hero.badges.nanoCeramic')}
         </span>
       </div>
       <div
@@ -89,7 +89,18 @@ function HeroVisual({ className = '' }: { className?: string }) {
           <HiOutlineSun className="h-4 w-4 sm:h-5 sm:w-5" />
         </span>
         <span className="max-w-[6rem] ps-1 text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
-          {t('services.list.2.title')}
+          {t('hero.badges.thermalInsulation')}
+        </span>
+      </div>
+      <div
+        className="animate-float absolute -bottom-2 -end-2 flex items-center gap-2 rounded-2xl border border-primary-100 bg-white p-1.5 shadow-xl sm:-bottom-4 sm:-end-4 sm:gap-3 sm:p-3 dark:border-white/10 dark:bg-primary-900"
+        style={{ animationDelay: '0.9s' }}
+      >
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-400/15 text-accent-600 sm:h-10 sm:w-10 dark:text-accent-400">
+          <HiOutlineSparkles2 className="h-4 w-4 sm:h-5 sm:w-5" />
+        </span>
+        <span className="max-w-[6rem] pe-1 text-[11px] font-semibold text-primary-900 sm:max-w-none sm:text-xs dark:text-slate-100">
+          {t('hero.badges.polishing')}
         </span>
       </div>
     </div>

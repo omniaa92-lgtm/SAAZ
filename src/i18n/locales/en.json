@@ -26,6 +26,12 @@
       "clients": "Happy Clients",
       "years": "Years of Experience",
       "team": "Years of Certified Warranty"
+    },
+    "badges": {
+      "ppf": "PPF Paint Protection Film",
+      "nanoCeramic": "Nano Ceramic",
+      "thermalInsulation": "Thermal Insulation",
+      "polishing": "Polishing"
     }
   },
   "about": {
