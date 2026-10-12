@@ -27,7 +27,7 @@ export const TESTIMONIALS: Testimonial[] = [
     timeAgo: 'منذ شهر',
   },
   {
-    name: 'فيصل الغامدي',
+    name: 'الكابتن فيصل الغامدي',
     text: 'ما شاء الله تبارك الله شغل مميز وجميل جداً الله يوفقكم يارب',
     rating: 5,
     timeAgo: 'منذ 7 أشهر',
