@@ -12,6 +12,7 @@ import Testimonials from './components/Testimonials'
 // import Portfolio from './components/Portfolio' // hidden temporarily
 import InstagramReels from './components/InstagramReels'
 import Location from './components/Location'
+import TabbyPromoBanner from './components/TabbyPromoBanner'
 import TabbyBanner from './components/TabbyBanner'
 import Booking from './components/Booking'
 import FinalCta from './components/FinalCta'
@@ -74,6 +75,7 @@ function HomePage() {
         <Hero />
         <About />
         <Services />
+        <TabbyPromoBanner />
         <TabbyBanner />
         <Offers />
         <WhyUs />
