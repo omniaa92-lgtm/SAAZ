@@ -230,4 +230,22 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     timeAgo: 'منذ 8 أشهر',
   },
+  {
+    name: 'Hessa Blue',
+    text: "Just got my car detailed there! PPF and Tinting. The guys did an EXCELLENT job really! Great service, very honest and very professional! I'm so happy with the results, I'd definitely recommend this place! TOP!!! Mashallah🙏",
+    rating: 5,
+    timeAgo: '11 months ago',
+  },
+  {
+    name: 'Nouman Masood',
+    text: "Great tinting job and excellent customer service! The car looks amazing and the heat reduction made an immediate difference. I'm very satisfied with the experience.",
+    rating: 5,
+    timeAgo: '6 days ago',
+  },
+  {
+    name: 'Sameer Al Refaee',
+    text: 'ماشاء الاه شغل نظيف ومتقن اضافة الى الضمان الذي يريح العميل',
+    rating: 5,
+    timeAgo: 'منذ 5 أيام',
+  },
 ]
