@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
-import Offers from './components/Offers'
+// import Offers from './components/Offers' // hidden until offers are updated
 import WhyUs from './components/WhyUs'
 import Testimonials from './components/Testimonials'
 // import Portfolio from './components/Portfolio' // hidden temporarily
@@ -77,7 +77,7 @@ function HomePage() {
         <Services />
         <TabbyPromoBanner />
         <TabbyBanner />
-        <Offers />
+        {/* <Offers /> hidden until offers are updated */}
         <WhyUs />
         <Testimonials />
         {/* <Portfolio /> hidden temporarily */}

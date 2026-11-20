@@ -6,7 +6,7 @@ import { useTheme } from '../context/ThemeContext'
 import { WHATSAPP_URL, PHONE_TEL, PHONE_DISPLAY } from '../config/contact'
 import Logo from './Logo'
 
-const NAV_KEYS = ['home', 'about', 'services', 'offers', 'whyUs', 'testimonials'] as const
+const NAV_KEYS = ['home', 'about', 'services', 'whyUs', 'testimonials'] as const
 
 function NavLinks({ t, onClick }: { t: TFunction; onClick?: () => void }) {
   return (
