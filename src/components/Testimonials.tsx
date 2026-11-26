@@ -53,7 +53,7 @@ export default function Testimonials() {
         <div className="relative mt-12">
           <div
             ref={trackRef}
-            className="scrollbar-none flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2"
+            className="scrollbar-none flex items-start snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2"
           >
             {TESTIMONIALS.map((rev, i) => (
               <article
@@ -87,7 +87,7 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="mt-3 line-clamp-6 text-sm leading-relaxed text-slate-600">{rev.text}</p>
+                <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-slate-600">{rev.text}</p>
               </article>
             ))}
           </div>
