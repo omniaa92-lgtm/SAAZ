@@ -9,6 +9,8 @@
  * ]
  */
 export const INSTAGRAM_REELS: string[] = [
+  'https://www.instagram.com/reel/Df5eKpJH-g9/',
+  'https://www.instagram.com/reel/DgRkIuMESJW/',
   'https://www.instagram.com/reel/DdMoZXUtoVV/',
   'https://www.instagram.com/reel/DdEIxLXt_ow/',
   'https://www.instagram.com/reel/DcrSKRbNliy/',
